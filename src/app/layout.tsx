@@ -5,8 +5,13 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Italo Ruan",
-  description: "Portfolio - Italo Ruan",
+  title: "Israel Rocha",
+  description: "Portfolio - Israel Rocha",
+  icons: {
+    icon: "/ir-icon.svg?v=2",
+    shortcut: "/ir-icon.svg?v=2",
+    apple: "/ir-icon.svg?v=2",
+  }
 }
 
 export default function RootLayout({

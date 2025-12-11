@@ -1,7 +1,6 @@
 'use client'
 import { Copy, Plus } from "lucide-react"
 import Image from "next/image"
-import animationImg from "@/assets/animation.svg"
 import { motion } from "framer-motion"
 import Typewriter from 'typewriter-effect'
 import { useLanguage } from "@/hooks/useLanguage"
@@ -9,6 +8,7 @@ import { Switch } from "./ui/switch"
 import useLanguageStore from "@/store/langStore"
 import { useEffect, useState } from "react"
 import { useToast } from "./ui/use-toast"
+import { profile } from "console"
 
 const container = {
   visible: {
@@ -32,6 +32,7 @@ export const About = () => {
   const { translations } = useLanguage();
   const { language, setLanguage } = useLanguageStore()
   const { toast } = useToast()
+  const cvFile = language === 'en' ? '/RM2025.pdf' : '/CV2025.pdf';
 
   const [key, setKey] = useState(Date.now());
 
@@ -67,7 +68,7 @@ export const About = () => {
             variants={item}
             className="flex gap-2 justify-center w-60 items-center bg-[#161616] rounded-full p-1.5 px-2">
 
-            <div className="w-4 h-4 bg-secondary-100 rounded-full" />
+            <div className="w-4 h-4 bg-red-500 rounded-full" />
 
             <span className="text-xs">{translations.about.availableForJob}</span>
 
@@ -86,7 +87,7 @@ export const About = () => {
 
           <div className="flex gap-2 items-center justify-center bg-[#161616] rounded-full p-1 px-4">
 
-            <div className="w-4 h-4 bg-secondary-100 rounded-full" />
+            <div className="w-4 h-4 bg-green-500 rounded-full" />
 
             <span className="text-xs">{translations.about.availableForJob}</span>
 
@@ -119,8 +120,8 @@ export const About = () => {
             }
           }} className="w-32 h-32 bg-[#3F3E3E] rounded-full flex items-center justify-center mobile:hidden mt-5">
           <Image
-            src={animationImg}
-            alt="animation"
+            src="/profile.jpg"
+            alt="Israel Rocha Profile"
             width={158}
             height={159}
             className="object-cover"
@@ -129,10 +130,10 @@ export const About = () => {
 
         <motion.div variants={item} className="flex items-center justify-between mobile:mt-20 mt-5">
 
-          <div className="flex flex-col gap-7 w-72">
+          <div className="flex-1 max-w-2xl flex flex-col gap-7">
 
             <h2 className="text-3xl text-white">
-              I’m Italo Ruan
+              I’m Israel Rocha
             </h2>
 
             <div className="lg:text-xl text-base h-36">
@@ -149,20 +150,20 @@ export const About = () => {
             </div>
             <div className="flex gap-5 items-center mt-3">
               <div className="flex gap-0.5 h-10 hover:scale-105 transition-all">
-                <button className={`bg-secondary-100 text-white rounded-tl-lg rounded-bl-lg w-28 shadow-button`}
+                <button className={`bg-red-500 text-white rounded-tl-lg rounded-bl-lg w-28 shadow-button`}
                   onClick={() => {
-                    window.open('https://www.linkedin.com/in/italoruan')
+                    window.open('https://www.linkedin.com/in/israel-rocha-955137249/')
                   }}
                 >
                   {translations.about.hireButton}
                 </button>
-                <div className="w-7 bg-secondary-100 rounded-tr-lg rounded-br-lg flex items-center justify-center  shadow-button">
+                <div className="w-7 bg-red-500 rounded-tr-lg rounded-br-lg flex items-center justify-center  shadow-button">
                   <Plus size={20} className="text-white" />
                 </div>
               </div>
               <div className="flex h-9 hover:scale-105 transition-all"
                 onClick={() => {
-                  navigator.clipboard.writeText('italodev@protonmail.com')
+                  navigator.clipboard.writeText('israelrochadev@gmail.com')
                   toast({
                     title: translations.about.toastTitle,
                     duration: 1500,
@@ -176,8 +177,17 @@ export const About = () => {
                   <Copy size={16} className="text-white" />
                 </div>
               </div>
+                <div className="flex h-9 hover:scale-105 transition-all">
+             <button
+            className="w-32 bg-[#161616] rounded-lg flex items-center justify-center gap-1 border border-quaternary-100"
+            onClick={() => {
+              window.open(cvFile, '_blank')
+                 }}
+                 >
+              {translations.about.cvButton}
+                </button>
             </div>
-
+          </div>
           </div>
 
 
@@ -209,8 +219,8 @@ export const About = () => {
             }}
             className="w-40 h-40 bg-[#3F3E3E] rounded-full mobile:flex items-center justify-center hidden">
             <Image
-              src={animationImg}
-              alt="animation"
+              src="/profile.jpg"
+              alt="Israel Rocha Profile"
               width={158}
               height={159}
               className="object-cover"

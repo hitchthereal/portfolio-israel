@@ -1,5 +1,4 @@
 import Image from "next/image";
-import groupBallsImg from "../assets/group-balls.svg";
 import { Menu } from "lucide-react";
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
 import { useLanguage } from "@/hooks/useLanguage";
@@ -11,13 +10,13 @@ export const Navbar = () => {
   return (
     <div className="lg:h-16 h-12 w-full flex gap-1 items-center">
 
-      <div className="rounded-full lg:h-16 lg:w-16 h-12 w-12 flex items-center justify-center bg-primary-100 p-2 border-2 border-quaternary-100">
+      <div className="w-16 h-16 rounded-full overflow-hidden">
         <Image
-          src={groupBallsImg}
-          alt="Group of balls"
-          width={64}
-          height={64}
-          className="h-10 w-10"
+          src="/logo.svg"
+          alt="Logo Israel"
+          width={60}
+          height={60}
+          className="w-full h-full object-cover"
         />
       </div>
 

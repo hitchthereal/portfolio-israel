@@ -21,112 +21,108 @@ export const pt = {
   },
   about: {
     availableForJob: "DISPONÍVEL PARA TRABALHO",
-    title: "Desenvolvedor Mobile",
-    description: "Desenvolvedor mobile desde 2021, criador de um aplicativo com mais de 50 mil usuários. Comprometido com a constante melhoria da Experiência do Usuário.",
+    title: "Desenvolvedor Front-end",
+    description: "Trabalho com React, Next.js, TypeScript e Tailwind desenvolvendo SaaS escaláveis, com foco em interfaces responsivas, performance e experiências dinâmicas que facilitam a rotina dos usuários.",
     hireButton: "Contrate-me",
-    copyEmailButton: "Copiar Email",
-    toastTitle: "Email copiado para a área de transferência!"
+    copyEmailButton: "Copiar E-mail",
+    cvButton: "Currículo (PDF)",
+    toastTitle: "E-mail copiado para a área de transferência!"
   },
   recentWork: {
     title: "Trabalhos Recentes",
     items: [
       {
-        title: "Engenheiro de Software Mobile Embarcado",
-        date: "Abril de 2023 - Presente",
-        companyName: "CPQD"
+        title: "Desenvolvedor Front-end",
+        date: "Março de 2024 - Outubro de 2024",
+        companyName: "Defensoria Pública do Estado de Goiás"
       },
       {
-        title: "Engenheiro de Software Mobile",
-        date: "Junho de 2022 - Maio de 2023",
-        companyName: "060 Tecnologia"
+        title: "Desenvolvedor Júnior",
+        date: "Agosto de 2024 - Novembro de 2024",
+        companyName: "Escolar Manager"
       },
       {
-        title: "Engenheiro de Software Mobile",
-        date: "Janeiro de 2022 - Março de 2023",
-        companyName: "PetWiz"
+        title: "Desenvolvedor Júnior",
+        date: "Setembro de 2023 - Agosto de 2024",
+        companyName: "Senior Sistemas"
       },
       {
-        title: "Engenheiro de Software Mobile",
-        date: "Novembro de 2021 - Agosto de 2023",
-        companyName: "Kiwi Manga"
-      },
-      {
-        title: "Engenheiro de Software Mobile",
-        date: "Setembro de 2023 - Presente",
-        companyName: "Wealt"
+        title: "Estagiário de Desenvolvimento",
+        date: "Setembro de 2022 - Agosto de 2023",
+        companyName: "Vega Construtora"
       }
     ]
   },
   languageCard: {
-    title: "Desenvolvedor Flutter"
+    title: "Desenvolvedor Front-end"
   },
   technologyCard: {
-    defaultName: "Desenvolvedor IOS",
-    reverseGradientName: "Desenvolvedor Android"
+    defaultName: "React & Next.js",
+    reverseGradientName: "Saas Responsivos"
   },
   productCard: {
-    title: "Aplicativo Mobile",
-    description: "Desenvolvimento de Produto"
+    title: "GT Soluções",
+    description: "Saas Development"
   },
   linkedinCard: {
-    title: "Meu Perfil no LinkedIn",
-    description: "Venha me conhecer!"
+    title: "Conheça um pouco do meu trabalho!",
+    description: "Saas Development"
   },
   appCard: {
-    title: "Kiwi Manga: Manga Manhwa",
-    description: "Meu primeiro aplicativo atingiu mais de 50.000 downloads!"
+    title: "Finafy Benefícios - Demo",
+    description: "Saas Development (Projeto em desenvolvimento)"
   },
   recommendations: {
     title: "Recomendações",
     subtitle: "Pessoas que confiam no meu trabalho.",
     cards: [
       {
-        name: "Giseli Gouveia",
-        position: "UX Designer",
-        quote: "Tive a grata oportunidade de trabalhar com o Italo por quase um ano, num mesmo projeto, e ele sempre se mostrou pró-ativo, colaborativo, comunicador, preocupado em atender as demandas e em prover as melhores soluções para os usuários e cliente. Uma pessoa excelente para trabalhar em conjunto e com muita vontade de evoluir em sua carreira.",
-        image: "https://media.licdn.com/dms/image/C4E03AQHYHvFmyLJ89w/profile-displayphoto-shrink_400_400/0/1516334112500?e=1721260800&v=beta&t=2JMjV_pcDfV4KPtzxmpSdd_P9peYcUP3xpIXxGryRSI"
+        name: "Guilherme Marcorio",
+        position: "Data Engineer",
+        quote: "Trabalhar com o Israel sempre foi sinônimo de confiança e entrega. Mesmo vindo de áreas diferentes (eu em dados e ele em Front-end), ele sempre demonstrou uma visão muito clara de produto e uma preocupação enorme com qualidade, performance e experiência do usuário. É um profissional extremamente comprometido, aprende rápido, se comunica bem com o time e não foge de problemas complexos — pelo contrário, vai atrás da melhor solução possível. Tenho total confiança no trabalho dele e o recomendo sem ressalvas para qualquer projeto que envolva desenvolvimento de sistemas e produtos SaaS.",
+        image: "/guilherme.png"
       },
       {
-        name: "Amanda Luiza",
-        position: "Desenvolvedora Web",
-        quote: "Tive a honra de trabalhar com Italo e ele simplesmente me mostrou ser um excelente profissional tanto na parte técnica quanto na parte da comunicação. Muito dedicado, talentoso e com foco em resolução de problemas.",
-        image: "https://media.licdn.com/dms/image/D4D03AQHj2-61qKAhHg/profile-displayphoto-shrink_100_100/0/1673126204609?e=1721260800&v=beta&t=I4jDNPXJvdfrFT4em8PvRSztUUO6Nw2NfuHtoYAgUaQ"
+        name: "Alexandre Ferreira",
+        position: "Full Stack Developer",
+        quote: "Tive a oportunidade de acompanhar de perto a trajetória do Israel como desenvolvedor e ver de verdade a sua evolução ao longo do tempo. Desde o início ele sempre demonstrou curiosidade, dedicação e muita vontade de aprender, e hoje se tornou um profissional muito mais maduro tecnicamente e seguro nas decisões que toma. É alguém que não tem medo de encarar desafios, busca entender o problema antes de sair codando e está sempre aberto a feedback. Tenho muito orgulho do progresso que ele teve e confiança total em indicá-lo para qualquer projeto de desenvolvimento.",
+        image: "/ale.png"
       },
       {
-        name: "Josemar Carvalho",
-        position: "Desenvolvedor",
-        quote: "Profissional muito dedicado e compromissado com as tarefas, mente aberta ao predizendo, em todo tempo focado nas entrega e melhoria do produto. Foi uma satisfação trabalhar com o Ítalo no projeto flutter da intelbras onde desenvolvemos juntos um app android/iOS para o produto IH3001. O IH3001 foi um projeto que podemos aplicar alguma técnicas de desenvolvimento o desenvolvemos voltada para aplicações embarcada no roteador IH3001 da Intelbras, eu poderia falar que o maior desfaio entre todos foi implementara uma chamada multicast no iOS, tivemos alguns embates com a Apple nessas questões más no final deu tudo certo, o app IH3001 consumi-o alguns recursos como, manipulação do roteador via HTTP Rest API, geração e compartilhamento de imagem Qrcode, Leitura de Qrcode, chamada multicast UDP para fazer Discovery na rede computacional, Aplicação do conceito de micro-apps, criar navegação personalizadas e animadas, gerar e consumir temas customizado para aplicação, bloc como gerenciador de estados, criação de widgets reativa, entre outros desafios, eu recomendo esse profissional com muita satisfação.",
-        image: "https://media.licdn.com/dms/image/C4E03AQEkmKFRNrWt1Q/profile-displayphoto-shrink_400_400/0/1637503807692?e=1721260800&v=beta&t=hyNi7IXDVM3wHmf7JB4KELKeZau8E4DQRftyqfAqSQE"
+        name: "Saul Matuzinhos",
+        position: "Project Development Analyst",
+        quote: "Demonstra muita competência com os frameworks que utiliza no dia a dia, em especial React, Next.js e o ecossistema moderno de front-end. Entende bem o funcionamento das ferramentas, sabe escolher as abordagens mais adequadas para cada cenário e mantém um código limpo, organizado e fácil de manter. Além disso, é bastante cuidadoso com a qualidade: valida fluxos, cobre casos de erro e só considera uma funcionalidade pronta depois de bem testada, o que resulta em entregas funcionais, estáveis e confiáveis",
+        image: "/saul.jpg"
       },
       {
-        name: "Daniele Renata Silva",
-        position: "Project Manager",
-        quote: "O Ítalo é extremamente proativo, é autodidata, não vê dificuldade que não possa ser superada, é bastante positivo. Uma pessoa com excelente entrega técnica e excelente comunicação. Muito bom em se relacionar com outras pessoas e se saiu muito bem num contexto com uma equipe grande com entregas constantes.",
-        image: "https://media.licdn.com/dms/image/C4D03AQHe3bQv395Z3w/profile-displayphoto-shrink_100_100/0/1646260823041?e=1721260800&v=beta&t=p3jlBPGSbXRH1M79vGJT3p_9juq8vKhYrtol8Th8kJg"
+        name: "Leonardo Souza",
+        position: "QA Engineer",
+        quote: "O Israel sempre me chamou atenção pelo domínio da stack que trabalha e pelo cuidado com cada detalhe das entregas. Ele navega muito bem entre React, Next.js, TypeScript, Tailwind e o ecossistema moderno de front-end, mas o que mais se destaca é como ele usa essas tecnologias para entregar soluções sólidas, bem estruturadas e pensadas para o uso real. É extremamente criterioso com organização de código, componentização, responsividade e UX, revisa o que faz, testa, refina e só considera pronto quando realmente está redondo. Trabalhar com alguém assim passa muita segurança, porque você sabe que o que sair da mão dele vai chegar com qualidade.",
+        image: "/leo.jpg"
       },
       {
-        name: "Erluan Felix Batista",
+        name: "Pedro Reis",
+        position: "Full Stack Software Engineer",
+        quote: "Mostra um nível de profissionalismo e proatividade acima da média no desenvolvimento dos projetos. Assume responsabilidade pelo que está fazendo, se antecipa a possíveis problemas, busca entender bem o contexto antes de entregar uma solução e mantém uma comunicação clara com o time. Não espera alguém mandar em cada detalhe: propõe melhorias, sugere ajustes de fluxo, questiona o que não faz sentido e está sempre disposto a ir além do ‘só fazer funcionar’ para realmente agregar valor ao produto.",
+        image: "/pedro.jpg"
+      },
+      {
+        name: "Anyelton Dutra",
         position: "Tech Lead",
-        quote: "O Italo é um dos profissionais mais dedicados que já pude ter o prazer de colaborar em conjunto. Tem uma visão de como podemos melhorar tal aplicação, desde o âmbito técnico até na valorização do negócio, e tem senso de urgência. É imprescindível reforçar que o Ítalo também tem sede de aprender. Está sempre disposto a ouvir, a compartilhar e a buscar conhecimento.",
-        image: "https://media.licdn.com/dms/image/C5103AQGQMGbCMpYr8Q/profile-displayphoto-shrink_100_100/0/1516928738084?e=1721260800&v=beta&t=2LgXxMAofKl60MtG51xGasyLRMuZiBRiFCj6xDYmNvg"
+        quote: "Me identifiquei com o Israel desde os primeiros dias em que entrou como estagiário no time. Sempre correu atrás para entender o contexto dos projetos, estudar as tecnologias que estávamos usando e resolver os problemas com responsabilidade. Era comum vê-lo pesquisando uma solução, testando diferentes abordagens e voltando com algo funcional e bem estruturado. Além disso, estava sempre disposto a ajudar o time, ouvir feedback, ajustar o que fosse necessário e compartilhar o que tinha aprendido. Pró-ativo, comprometido e com muita vontade de evoluir — é o tipo de profissional com quem eu trabalharia de novo sem pensar duas vezes.",
+        image: "/anyelton.jpeg"
       },
       {
-        name: "Gabriela Bastos",
-        position: "Gestão de Projetos",
-        quote: "Ótima comunicação e proatividade durante o desenvolvimento do projeto!",
-        image: "https://media.licdn.com/dms/image/D4D03AQFfuvbQ_1u5Lg/profile-displayphoto-shrink_100_100/0/1713202567320?e=1721260800&v=beta&t=1QPZdDCMTyzYATFok8qXStaN_KMUyxtKSiyfkPvvzuc"
+        name: "Maria Rita",
+        position: "Coordinator of the Systems Analysis and Development course",
+        quote: "Como coordenadora do curso de Análise e Desenvolvimento de Sistemas e também professora de Banco de Dados, tive a oportunidade de acompanhar de perto o desenvolvimento do Israel ao longo do curso. Sempre demonstrou facilidade em raciocínio lógico, modelagem de dados e construção de consultas bem estruturadas, o que o destacava nas atividades práticas. Além disso, tive a honra de compor a banca do seu TCC, um aplicativo para gestão de lanchonetes desenvolvido em Flutter, onde ficou ainda mais evidente sua capacidade de unir teoria e prática em uma solução completa, funcional e bem pensada. É um aluno dedicado, responsável e muito interessado em aprender, que evoluiu para um profissional promissor, com boa base técnica e atitude madura diante dos desafios da área.",
+        image: "/maria.jpg"
       },
       {
-        name: "Luan Albrechetti",
-        position: "Software Engineer",
-        quote: "Gostei muito de trabalhar junto com o Italo, ele é muito esforçado e aprende rápido. Tem um bom domínio referente ao Flutter e sempre esta buscando aprimorar seus conhecimento!",
-        image: "https://media.licdn.com/dms/image/C4E03AQGdaDdXl9-PRw/profile-displayphoto-shrink_100_100/0/1641145881104?e=1721260800&v=beta&t=vl55LcmTeGmsTYMFujZsldkjekvVhubx0TGm5NGEQV8"
-      },
-      {
-        name: "Mario Candido",
-        position: "Software Engineer",
-        quote: "Me identifiquei com o Italo e seu irmão gêmeo desde o primeiro dia de aula no nosso curso de ADS. Italo corre atras para resolver os problemas e sempre esta disposto a ajudar os colegas com tarefas e ensinar como as coisas funcionam. Pró-ativo e inteligente. Adoraria um dia trabalhar em algum projeto com ele fora da faculdade!",
-        image: "https://media.licdn.com/dms/image/D4D03AQEn3namQGv55g/profile-displayphoto-shrink_100_100/0/1713634073833?e=1721260800&v=beta&t=4ggnSfjDEUB_DD5XgcjCkn8r7KrVOhbIxFr9rDzcLzo"
+        name: "Giovanna Grassini",
+        position: "Public Business Intelligence Management Analyst",
+        quote: "Como professora nas disciplinas de Requisitos de Software e Metodologias Ágeis, pude ver o quanto o Israel levava a sério a parte de processo e organização de projetos. Sempre demonstrou cuidado em entender bem as necessidades do usuário antes de pensar em solução, escrevendo requisitos de forma clara e objetiva. Nas atividades com Scrum e outras práticas ágeis, se destacou pela participação, pelo senso de responsabilidade com o time e pela forma como encarava feedback e melhoria contínua. É um aluno que sempre buscou conectar teoria e prática, preocupado não só em ‘entregar a funcionalidade’, mas em entregar algo alinhado ao que foi combinado e com valor real para o usuário.",
+        image: "/gio.jpg"
       },
     ]
   },
@@ -156,112 +152,108 @@ export const en = {
   },
   about: {
     availableForJob: "AVAILABLE FOR JOB",
-    title: "Mobile Developer",
-    description: "Mobile developer since 2021, creator of an application with over 50,000 users. Committed to continuously improving User Experience.",
+    title: "Front-end Developer",
+    description: "I work with React, Next.js, TypeScript, and Tailwind developing scalable SaaS solutions, focusing on responsive interfaces, performance, and dynamic experiences that make users' daily routines easier.",
     hireButton: "Hire me",
-    copyEmailButton: "Copy Email",
-    toastTitle: "Email copied to clipboard!"
+    copyEmailButton: "Copy E-mail",
+    cvButton: "Resume (PDF)",
+    toastTitle: "E-mail copied to clipboard!"
   },
   recentWork: {
     title: "Recent Work",
     items: [
       {
-        title: "Embedded Mobile Software Engineer",
-        date: "April 2023 - Present",
-        companyName: "CPQD"
+        title: "Front-end Developer",
+        date: "March 2024 - October 2024",
+        companyName: "Public Defender's Office of the State of Goiás"
       },
       {
-        title: "Mobile Software Engineer",
-        date: "June 2022 - May 2023",
-        companyName: "060 Tecnologia"
+        title: "Junior Developer",
+        date: "August 2024 - November 2024",
+        companyName: "School Manager"
       },
       {
-        title: "Mobile Software Engineer",
-        date: "January 2022 - March 2023",
-        companyName: "PetWiz"
+        title: "Junior Developer",
+        date: "September 2023 - August 2024",
+        companyName: "Senior Systems"
       },
       {
-        title: "Mobile Software Engineer",
-        date: "November 2021 - August 2023",
-        companyName: "Kiwi Manga"
-      },
-      {
-        title: "Mobile Software Engineer",
-        date: "September 2023 - Present",
-        companyName: "Wealt"
+        title: "Software Development Intern",
+        date: "September 2022 - August 2023",
+        companyName: "Vega Construction Company"
       }
     ]
   },
   languageCard: {
-    title: "Flutter Developer"
+    title: "Front-end Developer"
   },
   technologyCard: {
-    defaultName: "IOS Developer",
-    reverseGradientName: "Android Developer"
+    defaultName: "React & Next.js",
+    reverseGradientName: "Responsive SaaS"
   },
   productCard: {
-    title: "Mobile App",
-    description: "Product Development"
+    title: "GT Soluções",
+    description: "Saas Development"
   },
   linkedinCard: {
-    title: "My LinkedIn Profile",
-    description: "Come to meet me!"
+    title: "Meet a bit of my work!",
+    description: "Saas Development"
   },
   appCard: {
-    title: "Kiwi Manga: Manga Manhwa",
-    description: "My first app reached a margin of over 50,000 downloads!"
+    title: "Finafy Benefícios - Demo",
+    description: "Saas Development (Project in development)"
   },
   recommendations: {
     title: "Recommendations",
     subtitle: "People who trust in my work.",
     cards: [
       {
-        name: "Giseli Gouveia",
-        position: "UX Designer",
-        quote: "I had the pleasant opportunity to work with Italo for almost a year on the same project, and he always showed himself to be proactive, collaborative, communicative, concerned with meeting demands and providing the best solutions for users and clients. An excellent person to work with and very eager to progress in his career.",
-        image: "https://media.licdn.com/dms/image/C4E03AQHYHvFmyLJ89w/profile-displayphoto-shrink_400_400/0/1516334112500?e=1721260800&v=beta&t=2JMjV_pcDfV4KPtzxmpSdd_P9peYcUP3xpIXxGryRSI"
+        name: "Guilherme Marcorio",
+        position: "Data Engineer",
+        quote: "Working with Israel has always been synonymous with trust and delivery. Even coming from different areas (me in data and him in front-end), he has always demonstrated a very clear product vision and a huge concern for quality, performance, and user experience. He is an extremely committed professional, learns quickly, communicates well with the team, and doesn't shy away from complex problems—on the contrary, he goes after the best possible solution. I have complete confidence in his work and recommend him without reservation for any project involving the development of systems and SaaS products.",
+        image: "/guilherme.png"
       },
       {
-        name: "Amanda Luiza",
-        position: "Web Developer",
-        quote: "I had the honor of working with Italo and he simply proved to be an excellent professional both in technical and communication aspects. Very dedicated, talented, and focused on problem-solving.",
-        image: "https://media.licdn.com/dms/image/D4D03AQHj2-61qKAhHg/profile-displayphoto-shrink_100_100/0/1673126204609?e=1721260800&v=beta&t=I4jDNPXJvdfrFT4em8PvRSztUUO6Nw2NfuHtoYAgUaQ"
+        name: "Alexandre Ferreira",
+        position: "Full Stack Developer",
+        quote: "I had the opportunity to closely follow Israel's trajectory as a developer and truly see his evolution over time. From the beginning, he always demonstrated curiosity, dedication, and a great desire to learn, and today he has become a much more technically mature professional and confident in the decisions he makes. He is someone who is not afraid He faces challenges, seeks to understand the problem before starting to code, and is always open to feedback. I am very proud of the progress he has made and have complete confidence in recommending him for any development project.",
+        image: "/ale.png"
       },
       {
-        name: "Josemar Carvalho",
-        position: "Developer",
-        quote: "A very dedicated and committed professional, open-minded to improvements, always focused on delivery and product improvement. It was a pleasure to work with Italo on the Intelbras flutter project where we developed an Android/iOS app for the IH3001 product. The IH3001 was a project where we applied some development techniques aimed at applications embedded in the Intelbras IH3001 router. I could say that the biggest challenge was implementing a multicast call on iOS. We had some issues with Apple on this matter, but in the end, everything worked out. The IH3001 app used some resources such as manipulating the router via HTTP Rest API, generating and sharing QR code images, QR code reading, UDP multicast call for network discovery, micro-apps concept application, creating personalized and animated navigation, generating and consuming custom themes for the application, bloc as a state manager, creating reactive widgets, among other challenges. I highly recommend this professional.",
-        image: "https://media.licdn.com/dms/image/C4E03AQEkmKFRNrWt1Q/profile-displayphoto-shrink_400_400/0/1637503807692?e=1721260800&v=beta&t=hyNi7IXDVM3wHmf7JB4KELKeZau8E4DQRftyqfAqSQE"
+        name: "Saul Matuzinhos",
+        position: "Project Development Analyst",
+        quote: "Demonstrates great competence with the frameworks used daily, especially React, Next.js, and the modern front-end ecosystem. Understands how the tools work, knows how to choose the most appropriate approaches for each scenario, and maintains clean, organized, and easy-to-maintain code. Furthermore, is very meticulous about quality: validates flows, covers error cases, and only considers a feature complete after it has been thoroughly tested, resulting in functional, stable, and reliable deliverables.",
+        image: "/saul.jpg"
       },
       {
-        name: "Daniele Renata Silva",
-        position: "Project Manager",
-        quote: "Italo is extremely proactive, self-taught, doesn't see any difficulty that cannot be overcome, and is very positive. A person with excellent technical delivery and excellent communication. Very good at relating to other people and performed very well in a context with a large team with constant deliveries.",
-        image: "https://media.licdn.com/dms/image/C4D03AQHe3bQv395Z3w/profile-displayphoto-shrink_100_100/0/1646260823041?e=1721260800&v=beta&t=p3jlBPGSbXRH1M79vGJT3p_9juq8vKhYrtol8Th8kJg"
+        name: "Leonardo Souza",
+        position: "QA Engineer",
+        quote: "Israel has always impressed me with his mastery of the technology stack he works with and his attention to detail in his deliverables. He navigates React, Next.js, TypeScript, Tailwind, and the modern front-end ecosystem very well, but what stands out most is how he uses these technologies to deliver solid, well-structured solutions designed for real-world use. He is extremely meticulous about code organization, componentization, responsiveness, and UX; he reviews his work, tests it, refines it, and only considers it finished when it's truly polished. Working with someone like that provides a lot of security because you know that whatever comes out of his hands will be of high quality.",
+        image: "/leo.jpg"
       },
       {
-        name: "Erluan Felix Batista",
+        name: "Pedro Reis",
+        position: "Full Stack Software Engineer",
+        quote: "Demonstrates an above-average level of professionalism and proactivity in project development. Takes responsibility for what he is doing, anticipates potential problems, seeks to understand the context well before delivering a solution, and maintains clear communication with the team. Doesn't wait for someone to dictate every detail: proposes improvements, suggests workflow adjustments, questions what doesn't make sense, and is always willing to go beyond 'just making it work' to truly add value to the product.",
+        image: "/pedro.jpg"
+      },
+      {
+        name: "Anyelton Dutra",
         position: "Tech Lead",
-        quote: "Italo is one of the most dedicated professionals I have had the pleasure to collaborate with. He has a vision of how we can improve an application, from the technical scope to business enhancement, and has a sense of urgency. It is essential to emphasize that Italo also has a thirst for learning. He is always willing to listen, share, and seek knowledge.",
-        image: "https://media.licdn.com/dms/image/C5103AQGQMGbCMpYr8Q/profile-displayphoto-shrink_100_100/0/1516928738084?e=1721260800&v=beta&t=2LgXxMAofKl60MtG51xGasyLRMuZiBRiFCj6xDYmNvg"
+        quote: "I identified with Israel from the very first days he joined the team as an intern. He always sought to understand the context of the projects, study the technologies we were using, and solve problems responsibly. It was common to see him researching a solution, testing different approaches, and coming back with something functional and well-structured. Furthermore, he was always willing to help the team, listen to feedback, adjust what was necessary, and share what he had learned. Proactive, committed, and with a strong desire to grow—he's the kind of professional I would work with again without hesitation.",
+        image: "/anyelton.jpeg"
       },
       {
-        name: "Gabriela Bastos",
-        position: "Project Management",
-        quote: "Great communication and proactivity during the project development!",
-        image: "https://media.licdn.com/dms/image/D4D03AQFfuvbQ_1u5Lg/profile-displayphoto-shrink_100_100/0/1713202567320?e=1721260800&v=beta&t=1QPZdDCMTyzYATFok8qXStaN_KMUyxtKSiyfkPvvzuc"
+        name: "Maria Rita",
+        position: "Coordinator of the Systems Analysis and Development course",
+        quote: "As the coordinator of the Systems Analysis and Development course and also a professor of Databases, I had the opportunity to closely follow Israel's development throughout the course. He always demonstrated ease in logical reasoning, data modeling, and building well-structured queries, which set him apart in practical activities. Furthermore, I had the honor of being on the panel for his final project, an application for managing snack bars developed in Flutter, where his ability to combine theory and practice in a complete, functional, and well-thought-out solution became even more evident. He is a dedicated, responsible student, very interested in learning, who has evolved into a promising professional with a strong technical foundation and a mature attitude towards the challenges of the field.",
+        image: "/maria.jpg"
       },
       {
-        name: "Luan Albrechetti",
-        position: "Software Engineer",
-        quote: "I really enjoyed working with Italo, he is very hardworking and learns quickly. He has a good command of Flutter and is always looking to improve his knowledge!",
-        image: "https://media.licdn.com/dms/image/C4E03AQGdaDdXl9-PRw/profile-displayphoto-shrink_100_100/0/1641145881104?e=1721260800&v=beta&t=vl55LcmTeGmsTYMFujZsldkjekvVhubx0TGm5NGEQV8"
-      },
-      {
-        name: "Mario Candido",
-        position: "Software Engineer",
-        quote: "I identified with Italo and his twin brother from the first day of class in our ADS course. Italo is proactive in solving problems and is always willing to help colleagues with tasks and teach how things work. Proactive and intelligent. I would love to work on a project with him outside of college one day!",
-        image: "https://media.licdn.com/dms/image/D4D03AQEn3namQGv55g/profile-displayphoto-shrink_100_100/0/1713634073833?e=1721260800&v=beta&t=4ggnSfjDEUB_DD5XgcjCkn8r7KrVOhbIxFr9rDzcLzo"
+        name: "Giovanna Grassini",
+        position: "Public Business Intelligence Management Analyst",
+        quote: "As a professor in Software Requirements and Agile Methodologies, I witnessed how seriously Israel took the process and organization of projects. He always demonstrated care in understanding user needs before thinking about solutions, writing requirements clearly and objectively. In activities with Scrum and other agile practices, he stood out for his participation, his sense of responsibility towards the team, and the way he approached feedback and continuous improvement. He is a student who always sought to connect theory and practice, concerned not only with 'delivering functionality' but with delivering something aligned with what was agreed upon and with real value for the user.",
+        image: "/gio.jpg"
       }
     ]
   },
