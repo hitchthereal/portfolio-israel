@@ -66,7 +66,7 @@ export const pt = {
   },
   linkedinCard: {
     title: "Conheça um pouco do meu trabalho!",
-    description: "Saas Development"
+    description: "SOS Promotora - Saas Development"
   },
   appCard: {
     title: "Finafy Benefícios - Demo",
@@ -197,7 +197,7 @@ export const en = {
   },
   linkedinCard: {
     title: "Meet a bit of my work!",
-    description: "Saas Development"
+    description: "SOS Promotora - Saas Development"
   },
   appCard: {
     title: "Finafy Benefícios - Demo",
