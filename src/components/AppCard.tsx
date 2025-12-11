@@ -20,7 +20,7 @@ export const AppCard = () => {
         <div>
           <a
             target="_blank"
-            className="font-semibold underline"
+            className="font-semibold mt-1 underline"
           >
             {translations.appCard.title}
           </a>
@@ -39,7 +39,7 @@ export const AppCard = () => {
       </div>
 
       {/* ÁREA NOVA: imagem -> vídeo no hover */}
-       <div className="mt-6 w-full rounded-2xl overflow-hidden relative group aspect-video">
+       <div className="mt-3 w-full rounded-2xl overflow-hidden relative group aspect-video">
         {/* Imagem estática */}
         <Image
           src="/finafy-print.png"
@@ -89,7 +89,7 @@ export const AppCard = () => {
             "
           />
       </div>
-          <div className="w-full mt-4 rounded-2xl overflow-hidden relative group aspect-video">
+          <div className="w-full mt-2 rounded-2xl overflow-hidden relative group aspect-video">
             <div
               className="
               object-cover
