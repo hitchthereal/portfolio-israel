@@ -68,7 +68,7 @@ export const About = () => {
             variants={item}
             className="flex gap-2 justify-center w-60 items-center bg-[#161616] rounded-full p-1.5 px-2">
 
-            <div className="w-4 h-4 bg-red-500 rounded-full" />
+            <div className="w-4 h-4 bg-green-500 rounded-full" />
 
             <span className="text-xs">{translations.about.availableForJob}</span>
 
