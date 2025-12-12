@@ -133,7 +133,7 @@ export const About = () => {
           <div className="flex-1 max-w-full lg:max-w-2xl flex flex-col gap-7">
 
             <h2 className="text-3xl text-white">
-              I’m Israel Rocha
+              {translations.about.myself}
             </h2>
 
             <div className="lg:text-xl text-base h-36">
