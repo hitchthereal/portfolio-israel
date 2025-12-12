@@ -20,6 +20,7 @@ export const pt = {
     }
   },
   about: {
+    myself: "Eu sou Israel Rocha",
     availableForJob: "DISPONÍVEL PARA TRABALHO",
     title: "Desenvolvedor Front-end",
     description: "Trabalho com React, Next.js, TypeScript e Tailwind desenvolvendo SaaS escaláveis, com foco em interfaces responsivas, performance e experiências dinâmicas que facilitam a rotina dos usuários.",
@@ -151,6 +152,7 @@ export const en = {
     }
   },
   about: {
+    myself: "I'm Israel Rocha",
     availableForJob: "AVAILABLE FOR JOB",
     title: "Front-end Developer",
     description: "I work with React, Next.js, TypeScript, and Tailwind developing scalable SaaS solutions, focusing on responsive interfaces, performance, and dynamic experiences that make users' daily routines easier.",
