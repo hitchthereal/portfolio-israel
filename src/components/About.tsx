@@ -130,7 +130,7 @@ export const About = () => {
 
         <motion.div variants={item} className="flex items-center justify-between mobile:mt-20 mt-5">
 
-          <div className="flex-1 max-w-2xl flex flex-col gap-7">
+          <div className="flex-1 max-w-full lg:max-w-2xl flex flex-col gap-7">
 
             <h2 className="text-3xl text-white">
               I’m Israel Rocha
@@ -148,7 +148,7 @@ export const About = () => {
                 component={motion.p}
               />
             </div>
-            <div className="flex gap-5 items-center mt-3">
+            <div className="flex flex-wrap gap-2 lg:gap-5 items-center mt-3">
               <div className="flex gap-0.5 h-10 hover:scale-105 transition-all">
                 <button className={`bg-red-500 text-white rounded-tl-lg rounded-bl-lg w-28 shadow-button`}
                   onClick={() => {
