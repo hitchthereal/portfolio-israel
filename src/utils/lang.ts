@@ -34,7 +34,7 @@ export const pt = {
     items: [
       {
         title: "Desenvolvedor Front-end",
-        date: "Março de 2024 - Outubro de 2024",
+        date: "Março de 2025 - Outubro de 2025",
         companyName: "Defensoria Pública do Estado de Goiás"
       },
       {
@@ -166,7 +166,7 @@ export const en = {
     items: [
       {
         title: "Front-end Developer",
-        date: "March 2024 - October 2024",
+        date: "March 2025 - October 2025",
         companyName: "Public Defender's Office of the State of Goiás"
       },
       {
