@@ -3,11 +3,11 @@
 export const pt = {
   navbar: {
     home: {
-      title: "Bem-vindo ao nosso site",
-      description: "Esta é uma descrição de exemplo em português."
+      title: "Início",
+      description: "Página inicial."
     },
     about: {
-      title: "Sobre mim",
+      title: "Sobre",
       description: "Saiba mais sobre mim."
     },
     contact: {
@@ -16,66 +16,122 @@ export const pt = {
     },
     portfolio: {
       title: "Portfólio",
-      description: "Veja nosso portfólio de projetos."
+      description: "Veja meu portfólio de projetos."
+    },
+    skills: {
+      title: "Skills",
+      description: "Minhas habilidades técnicas."
     }
   },
   about: {
-    myself: "Eu sou Israel Rocha",
+    myself: "Israel Rocha",
+    role: "Full Stack Developer",
     availableForJob: "DISPONÍVEL PARA TRABALHO",
-    title: "Desenvolvedor Front-end",
-    description: "Trabalho com React, Next.js, TypeScript e Tailwind desenvolvendo SaaS escaláveis, com foco em interfaces responsivas, performance e experiências dinâmicas que facilitam a rotina dos usuários.",
+    title: "Desenvolvedor Full Stack focado em entregar software de qualidade",
+    description: "+3 anos de experiência construindo aplicações SaaS de alta performance com React, Next.js, TypeScript e Node.js. Experiência comprovada liderando padrões de desenvolvimento front-end, arquitetando soluções back-end com Prisma ORM e garantindo qualidade com testes automatizados. Cofundador de um laboratório de software, onde lidero estratégia técnica e ciclos de entrega.",
     hireButton: "Contrate-me",
     copyEmailButton: "Copiar E-mail",
     cvButton: "Currículo (PDF)",
     toastTitle: "E-mail copiado para a área de transferência!"
   },
+  skills: {
+    title: "Stack & Expertise",
+    subtitle: "Tecnologias e ferramentas que domino no dia a dia.",
+    categories: [
+      {
+        title: "Core Stack",
+        years: "3 anos",
+        items: ["React", "Next.js (App Router)", "TypeScript"],
+        icon: "code"
+      },
+      {
+        title: "Back-end & Data",
+        years: "3 anos",
+        items: ["Node.js (Express)", "Prisma ORM", "PostgreSQL", "MongoDB", "REST APIs"],
+        icon: "server"
+      },
+      {
+        title: "Styling & UI/UX",
+        years: "2 anos",
+        items: ["Tailwind CSS", "shadcn/ui", "Figma (Prototyping)"],
+        icon: "palette"
+      },
+      {
+        title: "Testing & QA",
+        years: "2 anos",
+        items: ["Cypress", "Puppeteer (E2E & Performance)"],
+        icon: "shield"
+      },
+      {
+        title: "DevOps & Tools",
+        years: "3 anos",
+        items: ["Git / GitHub / Bitbucket", "Docker", "Vercel"],
+        icon: "git"
+      },
+      {
+        title: "Engenharia",
+        years: "",
+        items: ["Clean Code", "SOLID", "Componentização", "Acessibilidade (WCAG)"],
+        icon: "star"
+      }
+    ],
+    languages: [
+      { name: "Português", level: "Nativo" },
+      { name: "Inglês", level: "B2 — Upper Intermediate" }
+    ]
+  },
   recentWork: {
-    title: "Trabalhos Recentes",
+    title: "Experiência Profissional",
     items: [
       {
-        title: "Desenvolvedor Front-end",
-        date: "Março de 2025 - Outubro de 2025",
+        title: "Desenvolvedor de Software & Líder Técnico",
+        date: "2025 — Atual",
+        companyName: "Minos LAB (Startup)"
+      },
+      {
+        title: "Desenvolvedor de Software",
+        date: "Mar 2025 — Out 2025",
         companyName: "Defensoria Pública do Estado de Goiás"
       },
       {
         title: "Desenvolvedor Júnior",
-        date: "Agosto de 2024 - Novembro de 2024",
+        date: "Ago 2024 — Nov 2024",
         companyName: "Escolar Manager"
       },
       {
         title: "Desenvolvedor Júnior",
-        date: "Setembro de 2023 - Agosto de 2024",
+        date: "Set 2023 — Ago 2024",
         companyName: "Senior Sistemas"
       },
       {
         title: "Estagiário de Desenvolvimento",
-        date: "Setembro de 2022 - Agosto de 2023",
+        date: "Set 2022 — Ago 2023",
         companyName: "Vega Construtora"
       }
     ]
   },
   languageCard: {
-    title: "Desenvolvedor Front-end"
+    title: "Full Stack Developer"
   },
   technologyCard: {
     defaultName: "React & Next.js",
-    reverseGradientName: "Saas Responsivos"
+    reverseGradientName: "Node.js & Express"
   },
   productCard: {
     title: "GT Soluções",
-    description: "Saas Development"
+    description: "SaaS Development"
   },
   linkedinCard: {
     title: "Conheça um pouco do meu trabalho!",
-    description: "SOS Promotora - Saas Development"
+    description: "SOS Promotora — SaaS Development"
   },
   appCard: {
-    title: "Finafy Benefícios - Demo",
-    description: "Saas Development (Projeto em desenvolvimento)"
+    title: "Finafy Benefícios — Demo",
+    description: "SaaS Development (Projeto em desenvolvimento)"
   },
   recommendations: {
     title: "Recomendações",
-    subtitle: "Pessoas que confiam no meu trabalho.",
+    subtitle: "Profissionais que confiam e recomendam meu trabalho.",
     cards: [
       {
         name: "Guilherme Marcorio",
@@ -135,11 +191,11 @@ export const pt = {
 export const en = {
   navbar: {
     home: {
-      title: "Welcome to our website",
-      description: "This is a sample description in English."
+      title: "Home",
+      description: "Home page."
     },
     about: {
-      title: "About me",
+      title: "About",
       description: "Learn more about me."
     },
     contact: {
@@ -148,66 +204,122 @@ export const en = {
     },
     portfolio: {
       title: "Portfolio",
-      description: "View our portfolio of projects."
+      description: "View my portfolio of projects."
+    },
+    skills: {
+      title: "Skills",
+      description: "My technical skills."
     }
   },
   about: {
-    myself: "I'm Israel Rocha",
-    availableForJob: "AVAILABLE FOR JOB",
-    title: "Front-end Developer",
-    description: "I work with React, Next.js, TypeScript, and Tailwind developing scalable SaaS solutions, focusing on responsive interfaces, performance, and dynamic experiences that make users' daily routines easier.",
+    myself: "Israel Rocha",
+    role: "Full Stack Developer",
+    availableForJob: "AVAILABLE FOR WORK",
+    title: "Full Stack Developer focused on shipping quality software",
+    description: "3+ years of experience building high-performance SaaS applications with React, Next.js, TypeScript and Node.js. Proven track record leading front-end development standards, architecting back-end solutions with Prisma ORM, and ensuring quality through automated testing. Co-founder of a software lab where I lead technical strategy and delivery cycles.",
     hireButton: "Hire me",
     copyEmailButton: "Copy E-mail",
     cvButton: "Resume (PDF)",
     toastTitle: "E-mail copied to clipboard!"
   },
+  skills: {
+    title: "Stack & Expertise",
+    subtitle: "Technologies and tools I work with daily.",
+    categories: [
+      {
+        title: "Core Stack",
+        years: "3 years",
+        items: ["React", "Next.js (App Router)", "TypeScript"],
+        icon: "code"
+      },
+      {
+        title: "Back-end & Data",
+        years: "3 years",
+        items: ["Node.js (Express)", "Prisma ORM", "PostgreSQL", "MongoDB", "REST APIs"],
+        icon: "server"
+      },
+      {
+        title: "Styling & UI/UX",
+        years: "2 years",
+        items: ["Tailwind CSS", "shadcn/ui", "Figma (Prototyping)"],
+        icon: "palette"
+      },
+      {
+        title: "Testing & QA",
+        years: "2 years",
+        items: ["Cypress", "Puppeteer (E2E & Performance)"],
+        icon: "shield"
+      },
+      {
+        title: "DevOps & Tools",
+        years: "3 years",
+        items: ["Git / GitHub / Bitbucket", "Docker", "Vercel"],
+        icon: "git"
+      },
+      {
+        title: "Engineering",
+        years: "",
+        items: ["Clean Code", "SOLID", "Componentization", "Web Accessibility (WCAG)"],
+        icon: "star"
+      }
+    ],
+    languages: [
+      { name: "Portuguese", level: "Native" },
+      { name: "English", level: "B2 — Upper Intermediate" }
+    ]
+  },
   recentWork: {
-    title: "Recent Work",
+    title: "Professional Experience",
     items: [
       {
-        title: "Front-end Developer",
-        date: "March 2025 - October 2025",
+        title: "Software Developer & Tech Lead",
+        date: "2025 — Present",
+        companyName: "Minos LAB (Startup)"
+      },
+      {
+        title: "Software Developer",
+        date: "Mar 2025 — Oct 2025",
         companyName: "Public Defender's Office of the State of Goiás"
       },
       {
         title: "Junior Developer",
-        date: "August 2024 - November 2024",
+        date: "Aug 2024 — Nov 2024",
         companyName: "School Manager"
       },
       {
         title: "Junior Developer",
-        date: "September 2023 - August 2024",
+        date: "Sep 2023 — Aug 2024",
         companyName: "Senior Systems"
       },
       {
         title: "Software Development Intern",
-        date: "September 2022 - August 2023",
+        date: "Sep 2022 — Aug 2023",
         companyName: "Vega Construction Company"
       }
     ]
   },
   languageCard: {
-    title: "Front-end Developer"
+    title: "Full Stack Developer"
   },
   technologyCard: {
     defaultName: "React & Next.js",
-    reverseGradientName: "Responsive SaaS"
+    reverseGradientName: "Node.js & Express"
   },
   productCard: {
     title: "GT Soluções",
-    description: "Saas Development"
+    description: "SaaS Development"
   },
   linkedinCard: {
-    title: "Meet a bit of my work!",
-    description: "SOS Promotora - Saas Development"
+    title: "Check out some of my work!",
+    description: "SOS Promotora — SaaS Development"
   },
   appCard: {
-    title: "Finafy Benefícios - Demo",
-    description: "Saas Development (Project in development)"
+    title: "Finafy Benefícios — Demo",
+    description: "SaaS Development (Project in development)"
   },
   recommendations: {
     title: "Recommendations",
-    subtitle: "People who trust in my work.",
+    subtitle: "Professionals who trust and recommend my work.",
     cards: [
       {
         name: "Guilherme Marcorio",
@@ -260,7 +372,7 @@ export const en = {
     ]
   },
   footer: {
-    availableForJob: "AVAILABLE FOR JOB"
+    availableForJob: "AVAILABLE FOR WORK"
   }
 }
 

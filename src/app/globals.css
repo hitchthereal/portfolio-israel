@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Smooth scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070707;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(230, 62, 33, 0.3);
+  color: white;
+}
+
 .gradient-big-card {
   background: #1B1B1B;
   background: linear-gradient(43deg, rgba(27,27,27,1) 60%, #601e14 98%);
@@ -48,6 +72,11 @@ button,
 select,
 a {
     -webkit-tap-highlight-color: transparent;
+}
+
+/* Typewriter cursor color override */
+.Typewriter__cursor {
+  color: #E63E21 !important;
 }
 
   @layer base {

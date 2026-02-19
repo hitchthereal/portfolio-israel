@@ -7,7 +7,7 @@ export const ProductCard = () => {
   const { translations } = useLanguage();
 
   return (
-    <div className="lg:h-[51rem] w-full bg-primary-100 rounded-xl border-2 border-quaternary-100 py-5 px-10">
+    <div className="lg:h-[51rem] w-full bg-primary-100 rounded-xl border border-quaternary-100 py-5 px-8 lg:px-10 hover:border-quaternary-100/80 transition-all duration-300">
       <div className="flex items-center justify-between">
         <div>
           <a

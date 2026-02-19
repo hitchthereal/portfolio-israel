@@ -9,6 +9,7 @@ import {
 import { useLanguage } from '@/hooks/useLanguage'
 import Image from 'next/image'
 import Autoplay from "embla-carousel-autoplay"
+import { Quote } from 'lucide-react'
 
 export const Recomendations = () => {
   
@@ -20,11 +21,16 @@ export const Recomendations = () => {
  
   
   return (
-    <div className='w-full lg:h-80 bg-primary-100 rounded-xl border-2 border-quaternary-100 py-8 px-14'>
-      <h3 className='font-semibold text-lg'>{translations.recommendations.title}</h3>
-      <p className='text-quinternary-100 text-sm mt-1'>{translations.recommendations.subtitle}</p>
+    <div className='w-full lg:min-h-[20rem] bg-primary-100 rounded-xl border border-quaternary-100 py-8 px-6 lg:px-14'>
+      <div className="flex items-center gap-3 mb-1">
+        <div className="w-8 h-8 rounded-lg bg-tertiary-100 border border-quaternary-100 flex items-center justify-center">
+          <Quote size={16} className="text-red-500" />
+        </div>
+        <h3 className='font-semibold text-lg text-white'>{translations.recommendations.title}</h3>
+      </div>
+      <p className='text-quinternary-100 text-sm ml-11'>{translations.recommendations.subtitle}</p>
 
-      <div className='flex mt-5'>
+      <div className='flex mt-6'>
         <Carousel
           opts={{
             align: "start",
@@ -46,8 +52,8 @@ export const Recomendations = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className='bg-primary-100 border-quinternary-100  active:bg-primary-100 focus:bg-primary-100' />
-          <CarouselNext className='bg-primary-100 border-quinternary-100 active:bg-primary-100 focus:bg-primary-100' />
+          <CarouselPrevious className='bg-tertiary-100 border-quaternary-100 hover:bg-quaternary-100 active:bg-tertiary-100 focus:bg-tertiary-100 text-white' />
+          <CarouselNext className='bg-tertiary-100 border-quaternary-100 hover:bg-quaternary-100 active:bg-tertiary-100 focus:bg-tertiary-100 text-white' />
         </Carousel>
       </div>
     </div>
@@ -64,24 +70,26 @@ interface ICardProps {
 const Card = ({ name, position, quote, image }: ICardProps) => {
 
   return (
-    <div className='gradient-border p-[1.5px] rounded-3xl recomendation-card-border'>
-      <div className='h-48 lg:w-[20rem] w-full bg-tertiary-100 rounded-3xl text-white flex flex-col gap-5 justify-center px-5 py-5 overflow-hidden'>
+    <div className='rounded-2xl border border-quaternary-100 hover:border-red-500/20 transition-all duration-300'>
+      <div className='h-48 lg:w-[20rem] w-full bg-tertiary-100 rounded-2xl text-white flex flex-col gap-4 justify-center px-5 py-5 overflow-hidden'>
         <div className='flex items-center gap-3'>
           
           <Image
             src={image}
-            alt='face'
+            alt={name}
             width={100}
             height={100}
-            className='rounded-full w-14 h-14'
+            className='rounded-full w-12 h-12 border border-quaternary-100 object-cover'
           />
 
           <div>
-            <h4>{name}</h4>
-            <p className='text-[10px]'>{position}</p>
+            <h4 className='font-medium text-sm'>{name}</h4>
+            <p className='text-[10px] text-zinc-500'>{position}</p>
           </div>
         </div>
-        <p className='text-sm overflow-hidden text-ellipsis lg:line-clamp-4 line-clamp-3 cursor-pointer' title={quote}>{quote}</p>
+        <p className='text-xs text-zinc-400 overflow-hidden text-ellipsis lg:line-clamp-4 line-clamp-3 cursor-pointer leading-relaxed' title={quote}>
+          &ldquo;{quote}&rdquo;
+        </p>
       </div>
     </div>
   )

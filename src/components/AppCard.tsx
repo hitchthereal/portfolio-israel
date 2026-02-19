@@ -14,7 +14,7 @@ export const AppCard = () => {
   }
 
   return (
-    <div className="flex-1 w-full bg-primary-100 rounded-xl border-2 border-quaternary-100 pt-5 px-10 overflow-hidden">
+    <div className="flex-1 w-full bg-primary-100 rounded-xl border border-quaternary-100 pt-5 px-8 lg:px-10 overflow-hidden hover:border-quaternary-100/80 transition-all duration-300">
 
       <div className="flex items-center justify-between">
         <div>

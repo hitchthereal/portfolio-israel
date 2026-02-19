@@ -9,7 +9,7 @@ export const LinkedinCard = () => {
   const linkedinUrl = 'https://www.linkedin.com/in/israel-rocha-955137249/'
 
   return (
-    <div className="w-full bg-primary-100 rounded-xl border-2 border-quaternary-100 py-5 px-10 lg:min-h-[24rem]">
+    <div className="w-full bg-primary-100 rounded-xl border border-quaternary-100 py-5 px-8 lg:px-10 lg:min-h-[24rem] hover:border-quaternary-100/80 transition-all duration-300">
       <div className="flex items-center justify-between">
         <div>
           <a

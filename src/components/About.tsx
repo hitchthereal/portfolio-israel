@@ -1,5 +1,5 @@
 'use client'
-import { Copy, Plus } from "lucide-react"
+import { Copy, Plus, Download } from "lucide-react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import Typewriter from 'typewriter-effect'
@@ -8,228 +8,193 @@ import { Switch } from "./ui/switch"
 import useLanguageStore from "@/store/langStore"
 import { useEffect, useState } from "react"
 import { useToast } from "./ui/use-toast"
-import { profile } from "console"
 
 const container = {
   visible: {
     transition: {
       delayChildren: 0.1,
-      staggerChildren: 0.05
+      staggerChildren: 0.06
     }
   }
-};
+}
 
 const item = {
   hidden: { y: 20, opacity: 0 },
   visible: {
     y: 0,
-    opacity: 1
+    opacity: 1,
+    transition: { duration: 0.5, ease: 'easeOut' }
   }
-};
+}
 
 export const About = () => {
-
-  const { translations } = useLanguage();
+  const { translations } = useLanguage()
   const { language, setLanguage } = useLanguageStore()
   const { toast } = useToast()
-  const cvFile = language === 'en' ? '/RM2025.pdf' : '/CV2025.pdf';
+  const cvFile = language === 'en' ? '/RM2026.pdf' : '/CV2026.pdf'
 
-  const [key, setKey] = useState(Date.now());
+  const [key, setKey] = useState(Date.now())
 
   useEffect(() => {
-    setKey(Date.now());
-  }, [translations]);
+    setKey(Date.now())
+  }, [translations])
 
   return (
-    <motion.div
-      className="lg:h-[32.5rem] h-auto bg-primary-100 border-2 border-quaternary-100 rounded-xl lg:px-14 px-5 lg:py-14 py-8 relative"
+    <motion.section
+      className="relative overflow-hidden rounded-2xl border-2 border-quaternary-100 bg-primary-100"
       variants={container}
       initial="hidden"
       animate="visible"
       id="about"
     >
+      {/* Subtle background glow */}
+      <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-red-500/5 blur-[120px] pointer-events-none" />
+      <div className="absolute -bottom-32 -left-32 w-72 h-72 rounded-full bg-red-500/3 blur-[100px] pointer-events-none" />
 
-      <div className="flex items-center gap-3 text-sm absolute top-2 right-2">
-        <span>EN</span>
+      {/* Language toggle */}
+      <div className="flex items-center gap-2 text-xs absolute top-4 right-4 z-10">
+        <span className={`transition-colors ${language === 'en' ? 'text-white font-semibold' : 'text-zinc-500'}`}>EN</span>
         <Switch
           className="data-[state=checked]:bg-zinc-700 data-[state=unchecked]:bg-zinc-700"
-          onClick={() => {
-            setLanguage(language === 'en' ? 'pt' : 'en')
-          }}
+          onClick={() => setLanguage(language === 'en' ? 'pt' : 'en')}
         />
-        <span>PT</span>
+        <span className={`transition-colors ${language === 'pt' ? 'text-white font-semibold' : 'text-zinc-500'}`}>PT</span>
       </div>
 
-      <div className="h-full w-full text-quinternary-100">
+      <div className="relative z-[1] lg:px-14 px-6 lg:py-14 py-8">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+          {/* Left content */}
+          <div className="flex-1 max-w-2xl flex flex-col gap-6">
+            {/* Available badge */}
+            <motion.div
+              variants={item}
+              className="flex gap-2 w-fit items-center bg-tertiary-100 border border-quaternary-100 rounded-full py-1.5 px-4"
+            >
+              <div className="relative">
+                <div className="w-2.5 h-2.5 bg-green-500 rounded-full" />
+                <div className="w-2.5 h-2.5 bg-green-500 rounded-full absolute inset-0 animate-ping opacity-75" />
+              </div>
+              <span className="text-xs text-green-400 font-medium tracking-wider">
+                {translations.about.availableForJob}
+              </span>
+            </motion.div>
 
-        <div className="flex flex-col justify-between mobile:hidden gap-5">
+            {/* Name and role */}
+            <motion.div variants={item} className="flex flex-col gap-1">
+              <h1 className="text-4xl lg:text-5xl font-bold text-white tracking-tight">
+                {translations.about.myself}
+              </h1>
+              <span className="text-lg lg:text-xl font-medium text-red-500">
+                {translations.about.role}
+              </span>
+            </motion.div>
 
-          <motion.div
-            variants={item}
-            className="flex gap-2 justify-center w-60 items-center bg-[#161616] rounded-full p-1.5 px-2">
+            {/* Title / tagline */}
+            <motion.h2 variants={item} className="text-xl lg:text-2xl text-zinc-300 font-light leading-relaxed">
+              {translations.about.title}
+            </motion.h2>
 
-            <div className="w-4 h-4 bg-green-500 rounded-full" />
-
-            <span className="text-xs">{translations.about.availableForJob}</span>
-
-          </motion.div>
-
-          <h1 className="text-2xl">
-            {translations.about.title}
-          </h1>
-
-        </div>
-
-        <motion.div variants={item} className="mobile:flex items-center justify-between hidden">
-          <h1 className="text-2xl">
-            {translations.about.title}
-          </h1>
-
-          <div className="flex gap-2 items-center justify-center bg-[#161616] rounded-full p-1 px-4">
-
-            <div className="w-4 h-4 bg-green-500 rounded-full" />
-
-            <span className="text-xs">{translations.about.availableForJob}</span>
-
-          </div>
-        </motion.div>
-
-        <motion.div
-          animate={["initial"]}
-          whileHover={["grow"]}
-          variants={{
-            grow: {
-              scale: 1.1
-            },
-            rotate: {
-              rotate: [null, -5, 5, 0],
-              transition: {
-                duration: 10
-              }
-            },
-            initial: {
-              y: [-5, 5],
-              rotate: 0,
-              transition: {
-                delay: 0.3,
-                duration: 2,
-                repeat: Infinity,
-                // repeatDelay: 0.2,
-                repeatType: "reverse"
-              }
-            }
-          }} className="w-32 h-32 bg-[#3F3E3E] rounded-full flex items-center justify-center mobile:hidden mt-5">
-          <Image
-            src="/profile.jpg"
-            alt="Israel Rocha Profile"
-            width={158}
-            height={159}
-            className="object-cover"
-          />
-        </motion.div>
-
-        <motion.div variants={item} className="flex items-center justify-between mobile:mt-20 mt-5">
-
-          <div className="flex-1 max-w-full lg:max-w-2xl flex flex-col gap-7">
-
-            <h2 className="text-3xl text-white">
-              {translations.about.myself}
-            </h2>
-
-            <div className="lg:text-xl text-base h-36">
+            {/* Typewriter description */}
+            <motion.div variants={item} className="text-base lg:text-lg text-quinternary-100 leading-relaxed min-h-[5rem]">
               <Typewriter
-                key={key} // This ensures the Typewriter re-renders when the key changes
-                options={{
-                  delay: 20,
-                }}
+                key={key}
+                options={{ delay: 15 }}
                 onInit={(typewriter) => {
-                  typewriter.typeString(translations.about.description).start();
+                  typewriter.typeString(translations.about.description).start()
                 }}
                 component={motion.p}
               />
-            </div>
-            <div className="flex flex-wrap gap-2 lg:gap-5 items-center mt-3">
-              <div className="flex gap-0.5 h-10 hover:scale-105 transition-all">
-                <button className={`bg-red-500 text-white rounded-tl-lg rounded-bl-lg w-28 shadow-button`}
-                  onClick={() => {
-                    window.open('https://www.linkedin.com/in/israel-rocha-955137249/')
-                  }}
-                >
-                  {translations.about.hireButton}
-                </button>
-                <div className="w-7 bg-red-500 rounded-tr-lg rounded-br-lg flex items-center justify-center  shadow-button">
-                  <Plus size={20} className="text-white" />
-                </div>
-              </div>
-              <div className="flex h-9 hover:scale-105 transition-all"
+            </motion.div>
+
+            {/* Action buttons */}
+            <motion.div variants={item} className="flex flex-wrap gap-3 items-center mt-2">
+              {/* Hire me */}
+              <button
+                className="group flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-medium rounded-lg px-6 h-11 shadow-button transition-all duration-300 hover:scale-[1.03]"
+                onClick={() => window.open('https://www.linkedin.com/in/israel-rocha-955137249/')}
+              >
+                {translations.about.hireButton}
+                <Plus size={16} className="group-hover:rotate-90 transition-transform duration-300" />
+              </button>
+
+              {/* Copy email */}
+              <button
+                className="flex items-center gap-2 bg-tertiary-100 border border-quaternary-100 text-zinc-300 hover:text-white hover:border-zinc-600 rounded-lg px-5 h-11 transition-all duration-300 hover:scale-[1.03]"
                 onClick={() => {
                   navigator.clipboard.writeText('israelrochadev@gmail.com')
-                  toast({
-                    title: translations.about.toastTitle,
-                    duration: 1500,
-                  })
+                  toast({ title: translations.about.toastTitle, duration: 1500 })
                 }}
               >
-                <button className="w-28 bg-[#161616] rounded flex items-center justify-center gap-1 border border-quaternary-100 rounded-tr-none rounded-br-none">
-                  {translations.about.copyEmailButton}
-                </button>
-                <div className="flex items-center justify-center border border-quaternary-100 bg-[#161616] px-2 rounded-tr-lg rounded-br-lg">
-                  <Copy size={16} className="text-white" />
-                </div>
-              </div>
-                <div className="flex h-9 hover:scale-105 transition-all">
-             <button
-            className="w-32 bg-[#161616] rounded-lg flex items-center justify-center gap-1 border border-quaternary-100"
-            onClick={() => {
-              window.open(cvFile, '_blank')
-                 }}
-                 >
-              {translations.about.cvButton}
-                </button>
-            </div>
-          </div>
+                {translations.about.copyEmailButton}
+                <Copy size={14} />
+              </button>
+
+              {/* CV download */}
+              <button
+                className="flex items-center gap-2 bg-tertiary-100 border border-quaternary-100 text-zinc-300 hover:text-white hover:border-zinc-600 rounded-lg px-5 h-11 transition-all duration-300 hover:scale-[1.03]"
+                onClick={() => window.open(cvFile, '_blank')}
+              >
+                {translations.about.cvButton}
+                <Download size={14} />
+              </button>
+            </motion.div>
           </div>
 
-
-
+          {/* Right: Profile image (desktop) */}
           <motion.div
-            animate={["initial"]}
-            whileHover={["grow"]}
-            variants={{
-              grow: {
-                scale: 1.1
-              },
-              rotate: {
-                rotate: [null, -5, 5, 0],
-                transition: {
-                  duration: 10
-                }
-              },
-              initial: {
-                y: [-5, 5],
-                rotate: 0,
-                transition: {
-                  delay: 0.3,
-                  duration: 2,
-                  repeat: Infinity,
-                  // repeatDelay: 0.2,
-                  repeatType: "reverse"
-                }
-              }
-            }}
-            className="w-40 h-40 bg-[#3F3E3E] rounded-full mobile:flex items-center justify-center hidden">
-            <Image
-              src="/profile.jpg"
-              alt="Israel Rocha Profile"
-              width={158}
-              height={159}
-              className="object-cover"
-            />
+            variants={item}
+            className="hidden lg:flex items-center justify-center"
+          >
+            <motion.div
+              animate={{ y: [-6, 6] }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut"
+              }}
+              className="relative"
+            >
+              {/* Glow ring */}
+              <div className="absolute -inset-2 rounded-full bg-gradient-to-br from-red-500/20 to-transparent blur-xl" />
+              <div className="w-44 h-44 rounded-full border-2 border-quaternary-100 overflow-hidden relative bg-[#2a2a2a] hover:border-red-500/40 transition-colors duration-500">
+                <Image
+                  src="/myprofile.jpeg"
+                  alt="Israel Rocha"
+                  width={176}
+                  height={176}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+            </motion.div>
           </motion.div>
 
-        </motion.div>
-
+          {/* Mobile profile image */}
+          <motion.div
+            variants={item}
+            className="lg:hidden flex justify-center"
+          >
+            <motion.div
+              animate={{ y: [-4, 4] }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut"
+              }}
+              className="w-28 h-28 rounded-full border-2 border-quaternary-100 overflow-hidden bg-[#2a2a2a]"
+            >
+              <Image
+                src="/myprofile.jpeg"
+                alt="Israel Rocha"
+                width={112}
+                height={112}
+                className="object-cover w-full h-full"
+              />
+            </motion.div>
+          </motion.div>
+        </div>
       </div>
-    </motion.div>
+    </motion.section>
   )
 }
