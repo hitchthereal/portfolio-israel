@@ -14,7 +14,7 @@ export const LanguageCard = () => {
         </div>
         <div>
           <p className="lg:text-lg text-base font-semibold text-white">{translations.languageCard.title}</p>
-          <p className="text-xs text-zinc-500">3+ years of experience</p>
+          <p className="text-xs text-zinc-500">4 years of experience</p>
         </div>
       </div>
     </div>
