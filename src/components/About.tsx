@@ -31,7 +31,7 @@ export const About = () => {
   const { translations } = useLanguage()
   const { language, setLanguage } = useLanguageStore()
   const { toast } = useToast()
-  const cvFile = language === 'en' ? '/RM2026.pdf' : '/CV2026.pdf'
+  const cvFile = language === 'en' ? '/RM2026!.pdf' : '/CV2026!.pdf'
 
   const [key, setKey] = useState(Date.now())
 

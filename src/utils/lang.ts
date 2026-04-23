@@ -28,7 +28,7 @@ export const pt = {
     role: "Full Stack Developer",
     availableForJob: "DISPONÍVEL PARA TRABALHO",
     title: "Desenvolvedor Full Stack focado em entregar software de qualidade",
-    description: "+3 anos de experiência construindo aplicações SaaS de alta performance com React, Next.js, TypeScript e Node.js. Experiência comprovada liderando padrões de desenvolvimento front-end, arquitetando soluções back-end com Prisma ORM e garantindo qualidade com testes automatizados. Cofundador de um laboratório de software, onde lidero estratégia técnica e ciclos de entrega.",
+    description: "4 anos de experiência construindo aplicações SaaS de alta performance com React, Next.js, TypeScript e Node.js. Experiência comprovada liderando padrões de desenvolvimento front-end, arquitetando soluções back-end com Prisma ORM e garantindo qualidade com testes automatizados. Cofundador de um laboratório de software, onde lidero estratégia técnica e ciclos de entrega.",
     hireButton: "Contrate-me",
     copyEmailButton: "Copiar E-mail",
     cvButton: "Currículo (PDF)",

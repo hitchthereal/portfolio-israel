@@ -9,7 +9,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Israel Rocha — Full Stack Developer",
-  description: "Full Stack Developer specializing in React, Next.js, TypeScript, Node.js and scalable SaaS applications. 3+ years of experience building high-performance digital products.",
+  description: "Full Stack Developer specializing in React, Next.js, TypeScript, Node.js and scalable SaaS applications. 4 years of experience building high-performance digital products.",
   icons: {
     icon: "/ir-icon.svg?v=2",
     shortcut: "/ir-icon.svg?v=2",
