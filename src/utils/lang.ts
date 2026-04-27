@@ -90,22 +90,22 @@ export const pt = {
       },
       {
         title: "Desenvolvedor de Software",
-        date: "Mar 2025 — Out 2025",
+        date: "2025 — 2025",
         companyName: "Defensoria Pública do Estado de Goiás"
       },
       {
         title: "Desenvolvedor Júnior",
-        date: "Ago 2024 — Nov 2024",
+        date: "2024 — 2024",
         companyName: "Escolar Manager"
       },
       {
         title: "Desenvolvedor Júnior",
-        date: "Set 2023 — Ago 2024",
+        date: "2023 — 2024",
         companyName: "Senior Sistemas"
       },
       {
         title: "Estagiário de Desenvolvimento",
-        date: "Set 2022 — Ago 2023",
+        date: "2022 — 2023",
         companyName: "Vega Construtora"
       }
     ]
@@ -216,7 +216,7 @@ export const en = {
     role: "Full Stack Developer",
     availableForJob: "AVAILABLE FOR WORK",
     title: "Full Stack Developer focused on shipping quality software",
-    description: "3+ years of experience building high-performance SaaS applications with React, Next.js, TypeScript and Node.js. Proven track record leading front-end development standards, architecting back-end solutions with Prisma ORM, and ensuring quality through automated testing. Co-founder of a software lab where I lead technical strategy and delivery cycles.",
+    description: "4 years of experience building high-performance SaaS applications with React, Next.js, TypeScript and Node.js. Proven track record leading front-end development standards, architecting back-end solutions with Prisma ORM, and ensuring quality through automated testing. Co-founder of a software lab where I lead technical strategy and delivery cycles.",
     hireButton: "Hire me",
     copyEmailButton: "Copy E-mail",
     cvButton: "Resume (PDF)",
@@ -278,22 +278,22 @@ export const en = {
       },
       {
         title: "Software Developer",
-        date: "Mar 2025 — Oct 2025",
+        date: "2025 — 2025",
         companyName: "Public Defender's Office of the State of Goiás"
       },
       {
-        title: "Junior Developer",
-        date: "Aug 2024 — Nov 2024",
+        title: "Software Developer",
+        date: "2024 — 2024",
         companyName: "School Manager"
       },
       {
-        title: "Junior Developer",
-        date: "Sep 2023 — Aug 2024",
+        title: "Software Developer",
+        date: "2023 — 2024",
         companyName: "Senior Systems"
       },
       {
-        title: "Software Development Intern",
-        date: "Sep 2022 — Aug 2023",
+        title: "Developer Intern",
+        date: "2022 — 2023",
         companyName: "Vega Construction Company"
       }
     ]
