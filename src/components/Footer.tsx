@@ -14,8 +14,8 @@ export const Footer = () => {
   ]
 
   return (
-    <footer className='rounded-2xl border border-quaternary-100 overflow-hidden' id='contact'>
-      <div className='w-full bg-primary-100 relative'>
+    <footer className='fancy-border rounded-2xl overflow-hidden' id='contact'>
+      <div className='w-full bg-primary-100/70 backdrop-blur-sm relative'>
         {/* Subtle glow */}
         <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-red-500/5 blur-[80px] pointer-events-none" />
         

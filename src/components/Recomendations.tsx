@@ -21,7 +21,7 @@ export const Recomendations = () => {
  
   
   return (
-    <div className='w-full lg:min-h-[20rem] bg-primary-100 rounded-xl border border-quaternary-100 py-8 px-6 lg:px-14'>
+    <div className='fancy-border w-full lg:min-h-[20rem] bg-primary-100/70 backdrop-blur-sm rounded-2xl py-8 px-6 lg:px-14'>
       <div className="flex items-center gap-3 mb-1">
         <div className="w-8 h-8 rounded-lg bg-tertiary-100 border border-quaternary-100 flex items-center justify-center">
           <Quote size={16} className="text-red-500" />
@@ -70,24 +70,25 @@ interface ICardProps {
 const Card = ({ name, position, quote, image }: ICardProps) => {
 
   return (
-    <div className='rounded-2xl border border-quaternary-100 hover:border-red-500/20 transition-all duration-300'>
-      <div className='h-48 lg:w-[20rem] w-full bg-tertiary-100 rounded-2xl text-white flex flex-col gap-4 justify-center px-5 py-5 overflow-hidden'>
-        <div className='flex items-center gap-3'>
-          
+    <div className='fancy-border group/rec rounded-2xl transition-transform duration-300 hover:-translate-y-1'>
+      <div className='relative h-48 lg:w-[20rem] w-full bg-tertiary-100 rounded-2xl text-white flex flex-col gap-4 justify-center px-5 py-5 overflow-hidden'>
+        <Quote size={56} className='absolute -top-2 right-2 text-red-500/10 group-hover/rec:text-red-500/20 transition-colors duration-300' />
+        <div className='relative flex items-center gap-3'>
+
           <Image
             src={image}
             alt={name}
             width={100}
             height={100}
-            className='rounded-full w-12 h-12 border border-quaternary-100 object-cover'
+            className='rounded-full w-12 h-12 border-2 border-quaternary-100 object-cover group-hover/rec:border-red-500/40 transition-colors duration-300'
           />
 
           <div>
-            <h4 className='font-medium text-sm'>{name}</h4>
+            <h4 className='font-semibold text-sm'>{name}</h4>
             <p className='text-[10px] text-zinc-500'>{position}</p>
           </div>
         </div>
-        <p className='text-xs text-zinc-400 overflow-hidden text-ellipsis lg:line-clamp-4 line-clamp-3 cursor-pointer leading-relaxed' title={quote}>
+        <p className='relative text-xs text-zinc-400 overflow-hidden text-ellipsis lg:line-clamp-4 line-clamp-3 cursor-pointer leading-relaxed' title={quote}>
           &ldquo;{quote}&rdquo;
         </p>
       </div>

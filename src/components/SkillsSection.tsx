@@ -1,7 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/hooks/useLanguage'
-import { Code2, Server, Palette, ShieldCheck, GitBranch, Star, Globe } from 'lucide-react'
+import { Code2, Server, Palette, ShieldCheck, GitBranch, Star, Globe, Boxes } from 'lucide-react'
 
 const iconMap: Record<string, React.ReactNode> = {
   code: <Code2 size={20} className="text-red-500" />,
@@ -10,6 +10,7 @@ const iconMap: Record<string, React.ReactNode> = {
   shield: <ShieldCheck size={20} className="text-red-500" />,
   git: <GitBranch size={20} className="text-red-500" />,
   star: <Star size={20} className="text-red-500" />,
+  ecosystem: <Boxes size={20} className="text-red-500" />,
 }
 
 const container = {
@@ -42,7 +43,7 @@ export const SkillsSection = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="w-full bg-primary-100 rounded-xl border-2 border-quaternary-100 py-10 px-6 lg:px-10"
+        className="fancy-border w-full bg-primary-100/70 backdrop-blur-sm rounded-2xl py-10 px-6 lg:px-10"
       >
         {/* Header */}
         <div className="flex flex-col gap-1 mb-8">

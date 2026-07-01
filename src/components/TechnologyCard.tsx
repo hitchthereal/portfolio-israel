@@ -13,9 +13,9 @@ export const TechnologyCard = ({ name, mustApplyReverseGradient }: ITechnologyCa
   const Icon = mustApplyReverseGradient ? Terminal : Code2;
 
   return (
-    <div className="w-1/2 rounded-xl border border-quaternary-100 bg-gradient-to-br from-primary-100 to-tertiary-100 hover:border-red-500/30 transition-all duration-300">
-      <div className="lg:h-32 h-24 w-full relative overflow-hidden rounded-xl flex flex-col items-center justify-center gap-2">
-        <div className={`w-9 h-9 rounded-lg flex items-center justify-center ${mustApplyReverseGradient ? 'bg-orange-500/10' : 'bg-blue-500/10'}`}>
+    <div className="fancy-border group w-1/2 rounded-2xl bg-gradient-to-br from-primary-100 to-tertiary-100 transition-transform duration-300 hover:-translate-y-0.5">
+      <div className="lg:h-32 h-24 w-full relative overflow-hidden rounded-2xl flex flex-col items-center justify-center gap-2">
+        <div className={`w-9 h-9 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 ${mustApplyReverseGradient ? 'bg-orange-500/10' : 'bg-blue-500/10'}`}>
           <Icon size={18} className={mustApplyReverseGradient ? 'text-orange-400' : 'text-blue-400'} />
         </div>
         <p className="lg:text-sm text-xs font-medium text-zinc-300">{cardName}</p>

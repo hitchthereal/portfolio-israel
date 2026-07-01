@@ -41,7 +41,7 @@ export const About = () => {
 
   return (
     <motion.section
-      className="relative overflow-hidden rounded-2xl border-2 border-quaternary-100 bg-primary-100"
+      className="fancy-border relative overflow-hidden rounded-2xl bg-primary-100/80 backdrop-blur-sm"
       variants={container}
       initial="hidden"
       animate="visible"
@@ -130,13 +130,14 @@ export const About = () => {
               </button>
 
               {/* CV download */}
-              <button
+              <a
+                href={cvFile}
+                download
                 className="flex items-center gap-2 bg-tertiary-100 border border-quaternary-100 text-zinc-300 hover:text-white hover:border-zinc-600 rounded-lg px-5 h-11 transition-all duration-300 hover:scale-[1.03]"
-                onClick={() => window.open(cvFile, '_blank')}
               >
                 {translations.about.cvButton}
                 <Download size={14} />
-              </button>
+              </a>
             </motion.div>
           </div>
 

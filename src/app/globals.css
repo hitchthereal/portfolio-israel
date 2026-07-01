@@ -2,6 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===== Ambient page background ===== */
+body {
+  background-color: #070707;
+  background-image:
+    radial-gradient(60rem 40rem at 85% -10%, rgba(230, 62, 33, 0.10), transparent 60%),
+    radial-gradient(50rem 40rem at -10% 20%, rgba(230, 62, 33, 0.06), transparent 55%),
+    radial-gradient(45rem 35rem at 50% 120%, rgba(230, 62, 33, 0.05), transparent 60%);
+  background-attachment: fixed;
+}
+
+/* Subtle film grain to add texture and depth */
+.grain-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ===== Reusable visual language ===== */
+
+/* Gradient hairline border that survives any border-radius */
+.fancy-border {
+  position: relative;
+}
+.fancy-border::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02) 40%, rgba(230, 62, 33, 0.28));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+/* Media frame for video/image showcases */
+.media-frame {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 18px 50px -20px rgba(0, 0, 0, 0.8), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.group:hover .media-frame,
+.media-frame:hover {
+  box-shadow: 0 26px 70px -22px rgba(230, 62, 33, 0.35), inset 0 0 0 1px rgba(230, 62, 33, 0.18);
+}
+
+/* Section eyebrow label */
+.section-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #E63E21;
+  font-weight: 600;
+}
+
 /* Smooth scrollbar styling */
 ::-webkit-scrollbar {
   width: 6px;

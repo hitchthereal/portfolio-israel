@@ -7,9 +7,9 @@ export const LanguageCard = () => {
   const { translations } = useLanguage()
 
   return (
-    <div className="rounded-xl border border-quaternary-100 bg-gradient-to-br from-primary-100 to-tertiary-100 hover:border-red-500/30 transition-all duration-300">
-      <div className="lg:h-32 h-24 w-full rounded-xl flex items-center justify-center gap-3">
-        <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
+    <div className="fancy-border group rounded-2xl bg-gradient-to-br from-primary-100 to-tertiary-100 transition-transform duration-300 hover:-translate-y-0.5">
+      <div className="lg:h-32 h-24 w-full rounded-2xl flex items-center justify-center gap-3">
+        <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center group-hover:bg-red-500/20 transition-colors duration-300">
           <Layers size={20} className="text-red-500" />
         </div>
         <div>

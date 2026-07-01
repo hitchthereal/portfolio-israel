@@ -46,8 +46,8 @@ export const pt = {
       },
       {
         title: "Back-end & Data",
-        years: "3 anos",
-        items: ["Node.js (Express)", "Prisma ORM", "PostgreSQL", "MongoDB", "REST APIs"],
+        years: "2 anos",
+        items: ["Node.js (Express)", "C# (.NET)", "Prisma ORM", "PostgreSQL", "MongoDB", "REST APIs"],
         icon: "server"
       },
       {
@@ -57,15 +57,21 @@ export const pt = {
         icon: "palette"
       },
       {
+        title: "Ecossistema",
+        years: "",
+        items: ["Java", "Spring Boot", "Angular"],
+        icon: "ecosystem"
+      },
+      {
         title: "Testing & QA",
         years: "2 anos",
-        items: ["Cypress", "Puppeteer (E2E & Performance)"],
+        items: ["Cypress", "Playwright", "Puppeteer (E2E & Performance)"],
         icon: "shield"
       },
       {
         title: "DevOps & Tools",
         years: "3 anos",
-        items: ["Git / GitHub / Bitbucket", "Docker", "Vercel"],
+        items: ["Git / GitHub / Bitbucket", "Docker", "Vercel", "Digital Ocean", "DBeaver"],
         icon: "git"
       },
       {
@@ -83,6 +89,11 @@ export const pt = {
   recentWork: {
     title: "Experiência Profissional",
     items: [
+      {
+        title: "Desenvolvedor de Software Full-stack",
+        date: "2025 — Atual",
+        companyName: "Yox Mobile"
+      },
       {
         title: "Desenvolvedor de Software & Líder Técnico",
         date: "2025 — Atual",
@@ -234,8 +245,8 @@ export const en = {
       },
       {
         title: "Back-end & Data",
-        years: "3 years",
-        items: ["Node.js (Express)", "Prisma ORM", "PostgreSQL", "MongoDB", "REST APIs"],
+        years: "2 years",
+        items: ["Node.js (Express)", "C# (.NET)", "Prisma ORM", "PostgreSQL", "MongoDB", "REST APIs"],
         icon: "server"
       },
       {
@@ -245,15 +256,21 @@ export const en = {
         icon: "palette"
       },
       {
+        title: "Ecosystem",
+        years: "",
+        items: ["Java", "Spring Boot", "Angular"],
+        icon: "ecosystem"
+      },
+      {
         title: "Testing & QA",
         years: "2 years",
-        items: ["Cypress", "Puppeteer (E2E & Performance)"],
+        items: ["Cypress", "Playwright", "Puppeteer (E2E & Performance)"],
         icon: "shield"
       },
       {
         title: "DevOps & Tools",
         years: "3 years",
-        items: ["Git / GitHub / Bitbucket", "Docker", "Vercel"],
+        items: ["Git / GitHub / Bitbucket", "Docker", "Vercel", "Digital Ocean", "DBeaver"],
         icon: "git"
       },
       {
@@ -271,6 +288,11 @@ export const en = {
   recentWork: {
     title: "Professional Experience",
     items: [
+      {
+        title: "Full-stack Software Developer",
+        date: "2025 — Present",
+        companyName: "Yox Mobile"
+      },
       {
         title: "Software Developer & Tech Lead",
         date: "2025 — Present",

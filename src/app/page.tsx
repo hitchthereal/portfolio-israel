@@ -15,9 +15,9 @@ import { SkillsSection } from "@/components/SkillsSection"
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex w-full lg:px-16 px-5 py-6 mx-auto">
+    <main className="relative z-[1] min-h-screen flex w-full lg:px-16 px-5 py-6 mx-auto">
 
-      <div className="h-full w-full flex flex-col gap-6 bg-[#070707] overflow-hidden">
+      <div className="h-full w-full flex flex-col gap-6 overflow-visible">
 
         <Navbar />
 

@@ -6,7 +6,7 @@ export const RecentWork = () => {
   const { translations } = useLanguage()
 
   return (
-    <div className="w-full bg-primary-100 rounded-xl border border-quaternary-100 py-8 px-8 lg:px-10 lg:min-h-[31rem]">
+    <div className="fancy-border w-full bg-primary-100/70 backdrop-blur-sm rounded-2xl py-8 px-8 lg:px-10 lg:min-h-[31rem]">
       <div className="flex items-center gap-3 mb-8">
         <div className="w-8 h-8 rounded-lg bg-tertiary-100 border border-quaternary-100 flex items-center justify-center">
           <Briefcase size={16} className="text-red-500" />

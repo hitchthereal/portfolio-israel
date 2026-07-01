@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <body className={`${inter.className} text-white bg-[#070707] max-w-[1280px] mx-auto antialiased`}>{children}</body>
+      <body className={`${inter.className} grain-overlay text-white bg-[#070707] max-w-[1280px] mx-auto antialiased`}>{children}</body>
     </html>
   );
 }

@@ -16,7 +16,7 @@ export const Navbar = () => {
   return (
     <nav className="lg:h-16 h-14 w-full flex gap-2 items-center">
 
-      <div className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0">
+      <div className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0 ring-1 ring-quaternary-100 hover:ring-red-500/40 transition-all duration-300">
         <Image
           src="/logo.svg"
           alt="Logo Israel"
@@ -27,7 +27,7 @@ export const Navbar = () => {
       </div>
 
       {/* Navbar desktop */}
-      <div className="flex-1 h-12 bg-primary-100 border border-quaternary-100 rounded-full lg:flex hidden items-center justify-center gap-1 px-2">
+      <div className="fancy-border flex-1 h-12 bg-primary-100/70 backdrop-blur-sm rounded-full lg:flex hidden items-center justify-center gap-1 px-2">
         {navLinks.map((link, i) => (
           <a
             key={i}
@@ -46,7 +46,7 @@ export const Navbar = () => {
       </div>
 
       {/* Navbar mobile */}
-      <div className="flex-1 h-12 bg-primary-100 border border-quaternary-100 rounded-full lg:hidden flex items-center justify-between px-5">
+      <div className="fancy-border flex-1 h-12 bg-primary-100/70 backdrop-blur-sm rounded-full lg:hidden flex items-center justify-between px-5">
 
         <a href='#' className="text-base font-medium text-red-500">
           {translations.navbar.portfolio.title}
