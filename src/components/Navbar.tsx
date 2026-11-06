@@ -1,83 +1,271 @@
-import Image from "next/image";
-import { Menu } from "lucide-react";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
-import { useLanguage } from "@/hooks/useLanguage";
+"use client"
 
+import { useEffect, useState } from "react"
+import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion"
+import { Command, Menu, X, Linkedin, Github, Mail } from "lucide-react"
+import { sectionIds, site, type SectionId } from "@/config/site"
+import { useLanguage } from "@/hooks/useLanguage"
+import { useActions } from "@/hooks/useActions"
+import { useUiStore } from "@/store/uiStore"
+import { LangToggle } from "./ui/LangToggle"
+import { Logo } from "./ui/Logo"
+import { cn } from "@/lib/utils"
 
-export const Navbar = () => {
-  const { translations } = useLanguage()
+function LocalClock({ label }: { label: string }) {
+  const [time, setTime] = useState<string | null>(null)
 
-  const navLinks = [
-    { href: '#about', label: translations.navbar.about.title },
-    { href: '#skills', label: translations.navbar.skills.title },
-    { href: '#contact', label: translations.navbar.contact.title },
-  ]
+  useEffect(() => {
+    const fmt = new Intl.DateTimeFormat("en-GB", {
+      timeZone: site.timeZone,
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+    })
+    const update = () => setTime(fmt.format(new Date()))
+    update()
+    const id = setInterval(update, 1000)
+    return () => clearInterval(id)
+  }, [])
 
   return (
-    <nav className="lg:h-16 h-14 w-full flex gap-2 items-center">
+    <span className="hud-label hidden items-center gap-2 text-dim xl:flex" title={label}>
+      <span className="text-faint">GYN</span>
+      <span className="tabular-nums text-ink" suppressHydrationWarning>
+        {time ?? "--:--:--"}
+      </span>
+    </span>
+  )
+}
 
-      <div className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0 ring-1 ring-quaternary-100 hover:ring-red-500/40 transition-all duration-300">
-        <Image
-          src="/logo.svg"
-          alt="Logo Israel"
-          width={56}
-          height={56}
-          className="w-full h-full object-cover"
-        />
-      </div>
+function useActiveSection() {
+  const [active, setActive] = useState<SectionId | null>(null)
 
-      {/* Navbar desktop */}
-      <div className="fancy-border flex-1 h-12 bg-primary-100/70 backdrop-blur-sm rounded-full lg:flex hidden items-center justify-center gap-1 px-2">
-        {navLinks.map((link, i) => (
-          <a
-            key={i}
-            href={link.href}
-            className="px-6 py-2 rounded-full text-sm font-medium text-zinc-400 hover:text-white hover:bg-tertiary-100 transition-all duration-200"
-          >
-            {link.label}
-          </a>
-        ))}
-        <a
-          href="#"
-          className="px-6 py-2 rounded-full text-sm font-medium bg-tertiary-100 text-red-500 border border-red-500/20"
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) setActive(entry.target.id as SectionId)
+        }
+      },
+      { rootMargin: "-45% 0px -50% 0px" },
+    )
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+    return () => observer.disconnect()
+  }, [])
+
+  return active
+}
+
+export function Navbar() {
+  const { t } = useLanguage()
+  const { goTo, openLink, copyEmail } = useActions()
+  const setPaletteOpen = useUiStore((s) => s.setPaletteOpen)
+  const active = useActiveSection()
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const [isMac, setIsMac] = useState(false)
+
+  const { scrollYProgress } = useScroll()
+  const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 30, mass: 0.3 })
+
+  useEffect(() => {
+    setIsMac(/Mac|iPhone|iPad/.test(navigator.platform))
+  }, [])
+
+  useEffect(() => {
+    if (!mobileOpen) return
+    const root = document.documentElement
+    const prev = root.style.overflow
+    root.style.overflow = "hidden"
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMobileOpen(false)
+    window.addEventListener("keydown", onKey)
+    return () => {
+      root.style.overflow = prev
+      window.removeEventListener("keydown", onKey)
+    }
+  }, [mobileOpen])
+
+  const links = sectionIds.map((id, i) => ({
+    id,
+    index: String(i + 1).padStart(2, "0"),
+    label: t.nav.links[id],
+  }))
+
+  return (
+    <>
+      <a
+        href="#main"
+        className="sr-only z-[120] rounded-md bg-pulse px-4 py-2 font-mono text-sm text-void focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+      >
+        Skip to content
+      </a>
+
+      <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5">
+        <nav
+          aria-label="Primary"
+          className="relative mx-auto flex h-14 max-w-[1320px] items-center justify-between gap-3 overflow-hidden rounded-2xl border border-line bg-void/70 pl-3 pr-2 backdrop-blur-xl"
         >
-          {translations.navbar.portfolio.title}
-        </a>
-      </div>
+          <a
+            href="#top"
+            onClick={(e) => {
+              e.preventDefault()
+              goTo("top")
+            }}
+            className="flex items-center gap-2.5 rounded-lg"
+            aria-label={t.nav.home}
+          >
+            <Logo className="h-8 w-8" />
+            <span className="hidden font-mono text-[13px] tracking-[0.18em] text-ink sm:inline">
+              ISRAEL<span className="text-pulse">.OS</span>
+            </span>
+          </a>
 
-      {/* Navbar mobile */}
-      <div className="fancy-border flex-1 h-12 bg-primary-100/70 backdrop-blur-sm rounded-full lg:hidden flex items-center justify-between px-5">
+          <ul className="hidden items-center gap-0.5 lg:flex">
+            {links.map((link) => {
+              const isActive = active === link.id
+              return (
+                <li key={link.id}>
+                  <a
+                    href={`#${link.id}`}
+                    aria-current={isActive ? "true" : undefined}
+                    className={cn(
+                      "group relative flex items-center gap-1.5 rounded-lg px-3 py-2 text-[13px] transition-colors duration-200",
+                      isActive ? "text-ink" : "text-dim hover:text-ink",
+                    )}
+                  >
+                    <span className={cn("font-mono text-[10px]", isActive ? "text-pulse" : "text-faint")}>
+                      {link.index}
+                    </span>
+                    {link.label}
+                    {isActive && (
+                      <motion.span
+                        layoutId="nav-active"
+                        className="absolute inset-0 -z-[1] rounded-lg border border-pulse/30 bg-pulse/[0.07]"
+                        transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                      />
+                    )}
+                  </a>
+                </li>
+              )
+            })}
+          </ul>
 
-        <a href='#' className="text-base font-medium text-red-500">
-          {translations.navbar.portfolio.title}
-        </a>
-
-        <Sheet key={1}>
-          <SheetTrigger asChild>
-            <button className="p-2 rounded-full hover:bg-tertiary-100 transition-colors">
-              <Menu size={20} />
+          <div className="flex items-center gap-2">
+            <LocalClock label={t.nav.localTime} />
+            <LangToggle />
+            <button
+              type="button"
+              onClick={() => setPaletteOpen(true)}
+              aria-label={t.nav.command}
+              className="hidden h-8 items-center gap-1.5 rounded-lg border border-line bg-abyss/70 px-2.5 font-mono text-[11px] text-dim transition-colors hover:border-pulse/50 hover:text-ink md:flex"
+            >
+              <Command size={12} />
+              <span>{isMac ? "⌘" : "Ctrl"} K</span>
             </button>
-          </SheetTrigger>
-          <SheetContent side='bottom' className="bg-primary-100 h-[45vh] border-t border-red-500/20 rounded-t-3xl">
-            <SheetHeader>
-              <SheetTitle className="text-red-500 text-lg">{translations.navbar.portfolio.title}</SheetTitle>
-            </SheetHeader>
-            <div className="flex flex-col justify-center items-center gap-3 mt-8">
-              {navLinks.map((link, i) => (
-                <a
-                  key={i}
-                  href={link.href}
-                  className="text-lg font-medium w-full text-center py-3 rounded-xl hover:bg-tertiary-100 transition-colors text-zinc-300 hover:text-white"
-                >
-                  {link.label}
-                </a>
-              ))}
+            <button
+              type="button"
+              onClick={() => setMobileOpen(true)}
+              aria-label={t.nav.menu}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
+              className="flex h-8 w-8 items-center justify-center rounded-lg border border-line bg-abyss/70 text-ink lg:hidden"
+            >
+              <Menu size={16} />
+            </button>
+          </div>
+
+          {/* Scroll progress */}
+          <motion.span
+            aria-hidden="true"
+            style={{ scaleX: progress }}
+            className="absolute inset-x-0 bottom-0 h-px origin-left bg-gradient-to-r from-nova via-pulse to-volt"
+          />
+        </nav>
+      </header>
+
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            id="mobile-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label={t.nav.menu}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-[90] flex flex-col bg-void/95 px-5 pb-8 pt-5 backdrop-blur-xl lg:hidden"
+          >
+            <div className="flex items-center justify-between">
+              <span className="font-mono text-[13px] tracking-[0.18em]">
+                ISRAEL<span className="text-pulse">.OS</span>
+              </span>
+              <button
+                type="button"
+                autoFocus
+                onClick={() => setMobileOpen(false)}
+                aria-label={t.nav.close}
+                className="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-ink"
+              >
+                <X size={18} />
+              </button>
             </div>
-          </SheetContent>
-        </Sheet>
 
-      </div>
+            <ul className="mt-10 flex flex-1 flex-col gap-1">
+              {links.map((link, i) => (
+                <motion.li
+                  key={link.id}
+                  initial={{ opacity: 0, x: -16 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.04 * i + 0.05 }}
+                >
+                  <a
+                    href={`#${link.id}`}
+                    onClick={() => setMobileOpen(false)}
+                    className="flex items-baseline gap-4 border-b border-line py-4 text-3xl font-semibold uppercase tracking-tight text-ink"
+                  >
+                    <span className="font-mono text-xs text-pulse">{link.index}</span>
+                    {link.label}
+                  </a>
+                </motion.li>
+              ))}
+            </ul>
 
-    </nav>
+            <div className="flex items-center justify-between gap-3">
+              <LangToggle />
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  onClick={copyEmail}
+                  aria-label={t.contact.channels.email}
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-dim"
+                >
+                  <Mail size={16} />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => openLink(site.linkedin)}
+                  aria-label="LinkedIn"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-dim"
+                >
+                  <Linkedin size={16} />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => openLink(site.github)}
+                  aria-label="GitHub"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-dim"
+                >
+                  <Github size={16} />
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   )
 }

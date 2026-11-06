@@ -1,16 +1,18 @@
-import { create } from 'zustand';
+import { create } from "zustand"
+
+export type Lang = "en" | "pt"
 
 interface ILanguageState {
-  language: string;
-  setLanguage: (language: string) => void;
-};
+  language: Lang
+  setLanguage: (language: Lang) => void
+  toggleLanguage: () => void
+}
 
-const useLanguageStore = create<ILanguageState>(
-  
-  (set) => ({
-    language: 'en',
-    setLanguage: (language) => set({ language }),
-  })
-);
+/** Always boots in English — no persistence on purpose. */
+const useLanguageStore = create<ILanguageState>((set) => ({
+  language: "en",
+  setLanguage: (language) => set({ language }),
+  toggleLanguage: () => set((s) => ({ language: s.language === "en" ? "pt" : "en" })),
+}))
 
-export default useLanguageStore;
+export default useLanguageStore

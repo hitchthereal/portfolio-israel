@@ -1,30 +1,52 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import type { Metadata, Viewport } from "next"
+import { JetBrains_Mono, Space_Grotesk } from "next/font/google"
+import "./globals.css"
 
-const inter = Inter({ 
+const display = Space_Grotesk({
   subsets: ["latin"],
   display: "swap",
-});
+  variable: "--font-display",
+})
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-mono",
+})
+
+const description =
+  "Full-stack Software Engineer with 4+ years building SaaS products and white-label web platforms with React, Next.js, TypeScript and Node.js."
 
 export const metadata: Metadata = {
-  title: "Israel Rocha — Full Stack Developer",
-  description: "Full Stack Developer specializing in React, Next.js, TypeScript, Node.js and scalable SaaS applications. 4 years of experience building high-performance digital products.",
+  title: "Israel Rocha — Full-stack Software Engineer",
+  description,
   icons: {
-    icon: "/ir-icon.svg?v=2",
-    shortcut: "/ir-icon.svg?v=2",
-    apple: "/ir-icon.svg?v=2",
-  }
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
+  openGraph: {
+    title: "Israel Rocha — Full-stack Software Engineer",
+    description,
+    type: "website",
+    images: ["/myprofile.jpeg"],
+  },
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = {
+  themeColor: "#03050A",
+  colorScheme: "dark",
+}
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <body className={`${inter.className} grain-overlay text-white bg-[#070707] max-w-[1280px] mx-auto antialiased`}>{children}</body>
+    <html lang="en" suppressHydrationWarning className={`${display.variable} ${mono.variable}`}>
+      <body>
+        <noscript>
+          <style>{".boot-failsafe{display:none!important}"}</style>
+        </noscript>
+        {children}
+      </body>
     </html>
-  );
+  )
 }

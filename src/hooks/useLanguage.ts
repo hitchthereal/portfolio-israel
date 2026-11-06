@@ -2,11 +2,8 @@ import useLanguageStore from "@/store/langStore"
 import { en, pt } from "@/utils/lang"
 
 export const useLanguage = () => {
-  const { language, } = useLanguageStore()
+  const { language, setLanguage, toggleLanguage } = useLanguageStore()
+  const t = language === "en" ? en : pt
 
-  const translations = language == 'en' ? en : pt
-
-  return {
-    translations
-  }
+  return { t, language, setLanguage, toggleLanguage }
 }

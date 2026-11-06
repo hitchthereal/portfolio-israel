@@ -2,95 +2,79 @@ import type { Config } from "tailwindcss"
 
 const config = {
   darkMode: ["class"],
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+  content: ["./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
       colors: {
+        // Surfaces
+        void: "#03050A",
+        abyss: "#060A12",
+        panel: "#0A101B",
+        line: "#18233A",
+        // Text
+        ink: "#E8F0FA",
+        dim: "#8D9EB6",
+        faint: "#4E5D74",
+        // Signals
+        pulse: "#3DF2FF",
+        volt: "#C6FF3D",
+        nova: "#8A6CFF",
+        // shadcn tokens (toast)
         border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        primary: {
-          100: '#1B1B1B',
-          DEFAULT: "rgb(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          100: '#E63E21',
-          DEFAULT: "rgb(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        tertiary: {
-          100: '#161616',  
-          DEFAULT: "rgb(var(--tertiary))"
-        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        quaternary: {
-          100: '#262626',
-        },
-        quinternary: {
-          100: '#C0C0C0'
-        }
+      },
+      fontFamily: {
+        sans: ["var(--font-display)", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      boxShadow: {
-        button: "1px 1px 15px #E63E21",
-      },
       keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
         },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+        "marquee-reverse": {
+          from: { transform: "translateX(-50%)" },
+          to: { transform: "translateX(0)" },
+        },
+        "spin-slow": {
+          to: { transform: "rotate(360deg)" },
+        },
+        "spin-reverse": {
+          to: { transform: "rotate(-360deg)" },
+        },
+        scan: {
+          "0%": { transform: "translateY(-100%)" },
+          "100%": { transform: "translateY(100%)" },
+        },
+        blink: {
+          "0%, 49%": { opacity: "1" },
+          "50%, 100%": { opacity: "0" },
+        },
+        "grid-flow": {
+          from: { backgroundPosition: "0 0" },
+          to: { backgroundPosition: "0 64px" },
         },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        marquee: "marquee var(--marquee-duration, 40s) linear infinite",
+        "marquee-reverse": "marquee-reverse var(--marquee-duration, 40s) linear infinite",
+        "spin-slow": "spin-slow 24s linear infinite",
+        "spin-reverse": "spin-reverse 36s linear infinite",
+        scan: "scan 6s linear infinite",
+        blink: "blink 1.1s steps(1) infinite",
+        "grid-flow": "grid-flow 3s linear infinite",
       },
-      screens: {
-        mobile: "540px",
-        lg: "1116px",
-      }
     },
   },
   plugins: [require("tailwindcss-animate")],
